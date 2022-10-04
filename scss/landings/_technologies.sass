@@ -1,0 +1,63 @@
+.technologies
+  h2
+    +screen(desktop-up)
+      max-width: 1080px
+      margin: 0 auto 35px
+  .subtitle
+    font-family: $support-font-stack
+    text-align: center
+    +screen(tablet-up)
+      font-size: 33px
+    +screen(phone-only)
+      font-size: 16px
+  p
+    +screen(desktop-up)
+      max-width: 1110px
+      margin: 0 auto 70px
+  .wrap
+    display: flex
+    flex-wrap: wrap
+    max-width: 930px
+    margin: 0 auto
+    .item
+      margin-bottom: 55px
+      width: 25%
+      +screen(phone-only)
+        width: 33.33333%
+        margin-bottom: 10px
+      &-box
+        max-width: 80px
+        margin: 0 auto
+        +screen(phone-only)
+          max-width: 50px
+      &-icon
+        height: 80px
+        margin-bottom: 20px
+        +screen(phone-only)
+          height: 70px
+          margin-bottom: 5px
+        svg
+          width: 100%
+      &-title
+        font-family: $support-font-stack
+        font-size: 23px
+        color: $textDefaultColor
+        +screen(phone-only)
+          font-size: 14px
+  
+  body[class*='web'] &
+    .wrap
+      max-width: 1265px
+      .item
+        +screen(phone-only)
+          width: 50%
+        &-box
+          +screen(desktop-up)
+            max-width: 235px
+          +screen(tablet-only)
+            max-width: 200px
+          +screen(phone-only)
+            max-width: 130px
+        &-icon
+          display: flex
+          align-items: center

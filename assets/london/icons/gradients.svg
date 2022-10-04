@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="icon-gradients" width="0px" height="0px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Gradients set</title>
+    <desc>Gradients to be used for icons on London page</desc>
+    <defs>
+      <linearGradient id="london-primary" x1="0%" x2="100%">
+        <stop offset="0%" stop-color="#6D238F" />
+        <stop offset="100%" stop-color="#083CC2" />
+      </linearGradient>
+    </defs>
+</svg>

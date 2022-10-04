@@ -1,0 +1,49 @@
+.more-link,
+.angle-arrow,
+.angle-arrow::before,
+.angle-arrow::after
+  transition: all 0.2s
+
+.more-link
+  display: inline-block
+  font:
+    size: 18px
+    family: $support-font-stack
+  +screen(desktop-up)
+    font-size: 21px  
+  +screen(phone-only)
+    padding-top: 20px
+    font-size: 18px
+  &:hover
+    color: $textDefaultColor
+  .angle-arrow
+    width: 25px
+    height: 25px
+    margin-left: 5px
+    border: 1px solid $accentColor
+    border-radius: 50%
+    vertical-align: middle
+    +screen(phone-only)
+      width: 22px
+      height: 22px
+      top: -1px
+    +context('.more-link', '.more-link:hover')
+      border-color: $textDefaultColor
+    &::before,
+    &::after
+      left: 10px
+      width: 2px
+      height: 6px
+      +screen(phone-only)
+        left: 8px
+        height: 5px
+      +context('.more-link', '.more-link:hover')
+        background-color: $textDefaultColor
+    &::before
+      top: 6px
+      +screen(phone-only)
+        top: 5px
+    &::after
+      top: 11px
+      +screen(phone-only)
+        top: 10px

@@ -1,0 +1,17 @@
+.small-phone-off
+  +screen(small-phone-only)
+    display: none
+
+.small-phone-on
+  display: none
+  +screen(small-phone-only)
+    display: block
+
+.phone-only-off
+  +screen(phone-only)
+    display: none
+
+.phone-only-on
+  display: none
+  +screen(phone-only)
+    display: block

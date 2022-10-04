@@ -1,0 +1,30 @@
+.marked-list
+  margin-bottom: 45px
+  line-height: 1.62
+  +screen(phone-only)
+    line-height: 1.25
+  li
+    padding-left: 25px
+    margin-bottom: 18px
+    &::before
+      content: ''
+      display: inline-block
+      width: 8px
+      height: 8px
+      position: relative
+      top: -2px
+      margin: 0 17px 0 -25px
+      border-radius: 50%
+      background-color: $accentColor
+      +screen(phone-only)
+        width: 6px
+        height: 6px
+        top: -3px
+    ul
+      margin:
+        top: 10px
+        bottom: -5px
+        left: 5px
+      li
+        margin-bottom: 10px
+

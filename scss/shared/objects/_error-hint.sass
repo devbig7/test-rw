@@ -1,0 +1,45 @@
+.error-hint
+  $arrowWidth: 10px
+
+  display: none
+  position: absolute
+  right: 17px
+  top: 50%
+  z-index: 1
+  width: 26px
+  height: 23px
+  margin-top: -2px
+  transform: translateY(-50%)
+  background: url('contact/error-icon.svg') no-repeat center
+  cursor: pointer
+  +screen(phone-only)
+    margin-top: -1px
+
+  .has-error &
+    display: block
+
+  .error-message
+    display: none
+    position: absolute
+    right: -35px
+    bottom: 100%
+    width: 275px
+    margin-bottom: $arrowWidth - 1
+    padding: 19px
+    background-color: $warningColor
+    font-size: 14px
+
+    &::after
+      content: ''
+      display: block
+      width: 0
+      height: 0
+      position: absolute
+      bottom: -$arrowWidth + 1px
+      right: 38px
+      border: $arrowWidth solid transparent
+      border-bottom-width: 0
+      border-top-color: $warningColor
+
+    +context('.error-hint', '.error-hint:hover')
+      display: block

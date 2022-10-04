@@ -1,0 +1,238 @@
+$break-small: 500px
+$break-medium: 1000px
+$break-x-medium: 1023px
+$break-large: 1439px
+$break-x-large: 1900px
+$break-xx-large: 2560px
+
+=screen($size)
+  @if $size == small-phone-up
+    @media (min-width: 320px)
+      @content
+      
+  @else if $size == small-phone-only
+    @media (max-width: $break-small)
+      @content
+
+  @else if $size == big-phone-up
+    @media (min-width: $break-small + 1)
+      @content
+  @else if $size == big-phone-only
+    @media (min-width: $break-small + 1) and (max-width: $break-medium)
+      @content
+  @else if $size == phone-only
+    @media (max-width: $break-medium)
+      @content
+
+  @else if $size == tablet-up
+    @media (min-width: 768px)
+      @content
+  @else if $size == big-tablet-up
+    @media (min-width: $break-medium)
+      @content
+  @else if $size == tablet-only
+    @media (min-width: $break-medium + 1) and (max-width: $break-large)
+      @content
+  @else if $size == small-tablet-down
+    @media (max-width: $break-medium)
+      @content
+  @else if $size == tablet-down
+    @media (max-width: $break-large)
+      @content
+
+  @else if $size == small-desktop-up
+    @media (min-width: $break-x-medium + 1)
+      @content
+
+  @else if $size == desktop-up
+    @media (min-width: $break-large + 1)
+      @content
+  @else if $size == desktop-only
+    @media (min-width: $break-large + 1) and (max-width: $break-x-large)
+      @content
+  @else if $size == desktop-down
+    @media (max-width: $break-x-large)
+      @content
+
+  @else if $size == big-desktop-up
+    @media (min-width: $break-x-large + 1)
+      @content
+
+  @else if $size == huge-desktop-only
+    @media (min-width: $break-xx-large + 1)
+      @content
+
+  @else if $size == low-narrow
+    @media (max-width: $mobileNavigationBreak), (max-height: $breakHeightSmall)
+      @content
+
+=clearfix
+  &::after
+    content: '.'
+    display: block
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+=context($old-context, $new-context)
+  @at-root #{selector-replace(&, $old-context, $new-context)}
+    @content
+
+=hideWhenNavIsShown
+  .is-nav-shown &
+    @media (max-width: $mobileNavigationBreak), (max-height: $breakHeightSmall)
+      display: none
+
+=header-bg($fromColor: #194491, $toColor: #37a6d2)
+  background-color: $fromColor
+  background-image: linear-gradient(to bottom, $fromColor 0%, $toColor 100%)
+
+=retina($minResolution: 2dppx)
+  @media (min-resolution: $minResolution)
+    @content
+
+=background-image-retina($file, $size: auto)
+  $fileType: '.jpg'
+  @if str-ends-with($file, '.jpeg')
+    $fileType: '.jpeg'
+  @else if str-ends-with($file, '.png')
+    $fileType: '.png'
+  @else if str-ends-with($file, '.gif')
+    $fileType: '.gif'
+
+  background-image: url($file)
+  +retina
+    background-image: url(str-replace($file, $fileType, '@2x' + $fileType))
+    background-size: $size
+
+=background-image-webp($file, $fallback_ext)
+  background-image: none
+  .no-webp &
+    background-image: url($file + $fallback_ext)
+  .webp &
+    background-image: url($file + '.webp')
+  +retina
+    .no-webp &
+      background-image: url($file + '@2x' + $fallback_ext)
+    .webp &
+      background-image: url($file + '@2x' + '.webp')
+
+
+// String functions
+@function str-ends-with($string, $needle)
+  @return str-slice($string, -1 * str-length($needle)) == $needle
+
+@function str-replace($string, $search, $replace: '')
+  $index: str-index($string, $search)
+  @if $index
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+  @return $string
+
+// -----------------------------------------------------------------------------
+// Quantity queries
+// -----------------------------------------------------------------------------
+// Table of contents:
+// 1. Last Simple Selector
+// 2. Build Quantity Selector
+// 3. At least
+// 4. At most
+// 5. Between
+// 6. Exactly
+
+@function _last-simple-selector($selector)
+  $parsed: selector-parse($selector)
+  @if length($parsed) > 1
+    @error '`#{$selector}` contains #{length($parsed)} selectors and the `_last-simple-selector()`function accepts only 1.'
+  $last-simple-selector: nth(nth($parsed, 1), -1)
+  @return $last-simple-selector
+
+@function _build-quantity-selector($selector-append, $last-selector)
+  $quantity-selector: ()
+
+  @each $s in &
+    $last-simple-selector: '~' + if($last-selector, $last-selector, _last-simple-selector($s))
+    $sel: selector-append($s, $selector-append)
+    $sel2: selector-nest($sel, $last-simple-selector)
+    $quantity-selector: append($quantity-selector, $sel, 'comma')
+    $quantity-selector: append($quantity-selector, $sel2 , 'comma')
+
+  @return $quantity-selector
+
+=at-least($count, $selector: null)
+  $selector-append: ':nth-last-child(n+#{$count})'
+
+  @if type-of($count) != 'number' or not unitless($count) or $count < 1
+    @error '`#{$count}` is not a valid number for `at-least`'
+
+  @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1)
+    @error '`#{$selector}` is not a valid selector for `at-least`'
+
+  $at-least-selector: _build-quantity-selector($selector-append, $selector)
+
+  @at-root #{$at-least-selector}
+    @content
+
+=at-most($count, $selector: null)
+  $selector-append: ':nth-last-child(-n+#{$count}):first-child'
+
+  @if type-of($count) != 'number' or not unitless($count) or $count < 1
+    @error '`#{$count}` is not a valid number for `at-most`.'
+
+  @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1)
+    @error '`#{$selector}` is not a valid selector for `at-most`'
+
+  $at-most-selector: _build-quantity-selector($selector-append, $selector)
+
+  @at-root #{$at-most-selector}
+    @content
+
+=between($first, $last, $selector: null)
+  $selector-append: ':nth-last-child(n+#{$first}):nth-last-child(-n+#{$last}):first-child'
+
+  @if type-of($first) != 'number' or not unitless($first) or $first < 1
+    @error '`#{$first}` is not a valid number for `between`'
+
+  @if type-of($last) != 'number' or not unitless($last) or $last < 1
+    @error '`#{$last}` is not a valid number for `between`'
+
+  @if $first > $last
+    @error '#{$first} can´t be larger that #{$last} for `between`'
+
+  @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1)
+    @error '`#{$selector}` is not a valid selector for `between`'
+
+  $between-selector: _build-quantity-selector($selector-append, $selector)
+
+  @at-root #{$between-selector}
+    @content
+
+=exactly($count, $selector: null)
+  $selector-append: ':nth-last-child(#{$count}):first-child'
+
+  @if type-of($count) != 'number' or not unitless($count) or $count < 1
+    @error '`#{$count}` is not a valid number for `exactly`'
+
+  @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1)
+    @error '`#{$selector}` is not a valid selector for `exactly`'
+
+  $exactly-selector: _build-quantity-selector($selector-append, $selector)
+
+  @at-root #{$exactly-selector}
+    @content
+
+=border-gradient($dir, $from, $to, $width)
+  border-left: $width solid $from
+  border-right: $width solid $to
+  background-image: -webkit-linear-gradient($dir, $from, $to), -webkit-linear-gradient($dir, $from, $to)
+  background-size: 100% $width
+  background-position: 0 100%, 0 0
+  background-repeat: no-repeat
+  background-clip: border-box
+
+=gradient-text($gradient)
+  background: $gradient
+  background-clip: text
+  color: transparent
+  .title &
+    display: inline-block

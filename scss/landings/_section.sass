@@ -1,0 +1,102 @@
+section
+  overflow: hidden
+  body[class*='ai-machine'] &,
+  body[class*='ruby-on-rails'] &,
+  body[class*='react'] &,
+  body[class*='fintech'] &
+    position: relative
+    padding: 160px 0
+    +screen(phone-only)
+      padding: 50px 0
+    &.no-pad
+      padding: 0
+    &:first-child
+      padding: 0
+      +screen(desktop-up)
+        padding-bottom: 110px
+    &.pbn
+      padding-bottom: 0
+      +screen(desktop-up)
+        padding-bottom: 110px
+    &.ptn
+      padding-top: 0
+      // +screen(desktop-up)
+      //   padding-top: 110px
+  body[class*='web'] &
+    position: relative
+    padding: 100px 0
+    +screen(phone-only)
+      padding: 50px 0
+    &.no-pad
+      padding: 0
+    &:first-child
+      padding: 0
+      +screen(desktop-up)
+        padding-bottom: 110px
+    &.pbn
+      padding-bottom: 0
+      +screen(desktop-up)
+        padding-bottom: 110px
+    &.ptn
+      padding-top: 0
+    &:first-child
+      +screen(desktop-up)
+        padding-bottom: 160px
+    .image
+      &_fix-offset
+        +screen(tablet-up)
+          margin: 50px 0  
+          text-align: center
+  body[class*='react'] &
+    padding: 140px 0
+    +screen(phone-only)
+      padding: 50px 0
+  &.is-filled
+    background-color: $backgroundNeutralColor
+  &.is-filled-gr
+    background: linear-gradient(98.48deg, #EAF8FD 8.42%, #FDEAEE 148.45%)
+  &.is-filled-blue-pink
+    background: linear-gradient(180deg, #EAF5FD 19.28%, rgba(245, 231, 236, 0.19) 48.8%, #EAF5FD 75.26%, rgba(234, 245, 253, 0) 100%)
+    +screen(phone-only)
+      background: linear-gradient(180deg, #F4F6FC 0%, #EAF5FD 45.52%, rgba(234, 248, 252, 0.619766) 82.07%, rgba(234, 253, 251, 0) 100%)
+  &.is-filled-blue-pink-blue
+    overflow: visible
+    &:before
+      position: absolute
+      content: ''
+      top: 0
+      left: 0
+      right: 0
+      background: linear-gradient(180deg, #F0FAFF 8.93%, rgba(247, 236, 231, 0.604143) 39.03%, rgba(224, 234, 247, 0.52) 75.5%, rgba(212, 251, 254, 0) 100%)
+      +screen(phone-only)
+        bottom: -640px
+      +screen(tablet-only)
+        bottom: -380px
+      +screen(desktop-only)
+        bottom: -420px
+  &.is-flat
+    padding: 0
+    +screen(phone-only)
+      padding: 0
+  &.fix-offset
+    padding: 140px 0 0 !important
+    +screen(phone-only)
+      padding: 70px 0 20px !important
+    body[class*='web'] &
+      padding: 100px 0 0 !important
+  &.fix-offset-top
+    padding: 90px 0 180px !important
+    +screen(phone-only)
+      padding: 50px 0 !important
+
+  body[class*='ai-machine'] &:nth-child(2)
+    padding-top: 30px
+
+  body[class*='bridges'] &
+    p
+      +screen(tablet-up)
+        font-size: 18px
+        line-height: 1.62
+      +screen(phone-only)
+        margin: 0 0 20px
+        font-size: 16px

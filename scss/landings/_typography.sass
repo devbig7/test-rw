@@ -1,0 +1,101 @@
+body[class*='ai-machine'],
+body[class*='ruby-on-rails'],
+body[class*='fintech']
+  h1
+    width: 580px
+    font:
+      family: 'Poppins Bold'
+      size: 52px
+    padding-bottom: 6px
+    +screen(desktop-up)
+      font-size: 62px
+      line-height: 1.1
+      margin-bottom: 50px
+      width: 765px
+    +screen(phone-only)
+      text-align: center
+      font-size: 32px
+      width: auto
+
+body[class*='react'],
+body[class*='web']
+  h1
+    font-family: 'Poppins Bold'
+    font-size: 52px
+    +screen(desktop-up)
+      font-size: 76px
+      line-height: 1.05
+      margin-bottom: 55px
+    +screen(phone-only)
+      font-size: 30px
+  .wrapper
+    h2
+      line-height: 1.05
+      font-size: 47px
+      +screen(desktop-up)
+        font-size: 60px
+      +screen(tablet-up)
+        max-width: none
+        margin: 0 0 35px
+      +screen(phone-only)
+        font-size: 30px
+    p
+      +screen(phone-only)
+        font-size: 14px
+        line-height: 1.57
+
+.wrapper
+  h2
+    margin: 0 auto 25px
+    text-align: center
+    +screen(desktop-up)
+      max-width: 1020px
+    +screen(phone-only)
+      margin-bottom: 20px
+      font-size: 32px
+
+  h3
+    text-transform: none
+    &.big
+      font-size: 56px
+      +screen(phone-only)
+        font-size: 43px
+
+  p
+    text-align: center
+    z-index: 2
+    &.thin
+      font-size: 17px
+    &.extra-thin
+      font-size: 14px
+    &.thin, &.extra-thin
+      text-align: left
+      font-family: 'Poppins Regular'
+      max-width: 100%
+      line-height: 1.8
+      +screen(desktop-up)
+        font-size: 18px
+      +screen(phone-only)
+        text-align: center
+        font-size: 14px
+        max-width: 80%
+    +screen(desktop-up)
+      max-width: 1120px
+      font-size: 22px
+
+  h2, p
+    &.desktop-left
+      text-align: left
+      +screen(phone-only)
+        text-align: center
+    &.mobile-left
+      +screen(phone-only)
+        text-align: left
+
+  .cta
+    text-align: center
+    padding-top: 50px
+    +screen(desktop-up)
+      padding-top: 60px
+    +screen(phone-only)
+      padding-top: 50px

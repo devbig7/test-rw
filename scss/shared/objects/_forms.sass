@@ -1,0 +1,52 @@
+@use "sass:math"
+
+label
+  display: block
+  margin-bottom: 13px
+  &.extra-check
+    font-style: italic
+    margin-bottom: 30px
+
+fieldset
+  margin: 0 0 40px
+  padding: 0
+  border: none
+  +clearfix
+
+  +screen(phone-only)
+    margin-bottom: 35px
+  &:last-child
+    margin-bottom: 0
+  
+  p
+    color: $mainMidnightColor
+  
+  h1,h2,h3,h4,h5
+    color: $mainMidnightColor
+
+
+.field
+  $spaceSmall: 14px
+  $spaceMedium: 18px
+  $spaceBig: 22px
+
+  position: relative
+  margin-bottom: $spaceMedium
+  +screen(desktop-up)
+    margin-bottom: $spaceBig
+  +screen(phone-only)
+    margin-bottom: $spaceSmall
+  &.email-field
+    padding-right: math.div($spaceMedium, 2)
+    +screen(desktop-up)
+      padding-right: math.div($spaceBig, 2)
+  &.phone-field
+    padding-left: math.div($spaceMedium, 2)
+    +screen(desktop-up)
+      padding-left: math.div($spaceBig, 2)
+  &.email-field,
+  &.phone-field
+    +screen(phone-only)
+      float: none
+      width: 100%
+      padding: 0

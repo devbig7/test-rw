@@ -1,0 +1,76 @@
+.custom-intro
+  position: relative
+  overflow: hidden
+  background-color: $backgroundDefaultColor
+  +screen(desktop-up)
+    min-height: 840px
+
+  h1,
+  p
+    margin: 0
+    +screen(desktop-up)
+      margin-left: 25px
+    +screen(phone-only)
+      margin: 0 auto
+      width: auto
+      max-width: auto
+      text-align: center
+
+  .container
+    z-index: 2
+    position: relative
+    align-items: center
+    padding:
+      top: 130px
+      bottom: 180px
+    +screen(desktop-up)
+      padding:
+        top: 160px
+        bottom: 180px
+    +screen(phone-only)
+      padding:
+        top: 120px
+        bottom: 100px
+    > *
+      position: relative
+      z-index: 2
+
+  h1
+    width: 580px
+    font-size: 54px
+    +screen(desktop-up)
+      font-size: 80px
+      line-height: 80px
+      margin-bottom: 50px
+      width: 765px
+    +screen(phone-only)
+      font-size: 37px
+      width: auto
+
+  p
+    width: 55%
+    margin-top: 20px
+    font-size: 20px
+    +screen(desktop-up)
+      margin-top: 25px
+      font-size: 26px
+      width: 45%
+    +screen(tablet-up)
+      margin-top: 35px
+    +screen(phone-only)
+      margin-top: 14px
+      font-size: 18px
+      width: 90%
+    + p
+      font-size: 16px
+      line-height: 2
+      width: 50%
+      +screen(desktop-up)
+        font-size: 20px
+        width: 45%
+      +screen(phone-only)
+        margin-top: 14px
+        font-size: 13px
+        line-height: 2
+        width: 90%
+        max-width: 400px

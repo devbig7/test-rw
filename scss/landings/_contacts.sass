@@ -1,0 +1,51 @@
+.contacts
+  display: flex
+  align-items: center
+  flex-direction: column
+  min-height: 658px
+  padding: 50px 0
+  justify-content: center
+  text-align: center
+  color: $white
+  +screen(desktop-up)
+    min-height: 984px
+  +screen(phone-only)
+    min-height: 500px
+
+  h2
+    color: $white
+
+  p
+    max-width: 825px
+    font-size: 20px
+    font-family: $support-font-stack
+    +screen(phone-only)
+      font-size: 18px
+
+  .image-cover
+    width: 140%
+    +screen(phone-only)
+      width: 250%
+    +screen(big-phone-only)
+      width: 150%
+
+    .image
+      width: 100%
+
+  .contacts-ai &
+    h2
+      margin-bottom: 50px
+      +screen(desktop-up)
+        margin-bottom: 100px
+      +screen(phone-only)
+        margin-bottom: 50px
+
+  .contacts-fintech &
+    min-height: unset
+    h2
+      +screen(phone-only)
+        font-size: 2.8125rem
+
+    .cta
+      padding-top: 0
+      

@@ -1,0 +1,25 @@
+.badge-hiring
+    vertical-align: middle
+    transition: 0.17s
+    padding-right: 0
+    transition: 0.2s
+
+    &::after
+        display: inline-block
+        content: ' Hiring '
+        border: 1px solid $badgesColor
+        color: $badgesColor
+        background: $badgesBackgroundColor
+        padding: 4px $space-01
+        border-radius: 4px
+        font-size: 11px
+        line-height: 12px
+        margin-left: $space-01
+        margin-top: -2px
+        vertical-align: middle
+        z-index: 2
+
+    &:hover
+        &::after
+            background: $badgesColor
+            color: $white

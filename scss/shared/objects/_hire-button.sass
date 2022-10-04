@@ -1,0 +1,62 @@
+.hire-button
+  padding: $space-01 $space-02
+  border: 1px solid transparent
+  border-radius: 24px
+  font-size: 1rem
+  font-weight: bold
+  font-family: $primary-font-stack
+  vertical-align: middle
+  text:
+    align: center
+    decoration: none
+    transform: None
+  color: $backgroundDark
+  cursor: pointer
+  transition: all 0.3s ease
+  background: $white
+  background-clip: padding-box
+  position: relative
+
+  &:hover
+    background-color: $accentColor
+    color: $white
+
+  .has-dark-bg:not(.is-scrolled) &
+    border-color: rgba($white, 0.7)
+    color: $white
+    &:hover
+      background-color: $white
+      color: $accentColor
+    .index &
+      border-color:  $mainMidnightColor
+      color: $backgroundDark
+
+      &:hover
+        background-color: $mainMidnightColor
+        color: $white
+  
+  &.inverse
+    background-color: $accentColor
+    color: $white 
+    &:hover
+      background-color: transparent
+      color: $accentColor
+
+  &.big
+    margin-top: 20px
+    display: inline-block
+    padding: 10px 22px
+    font-size: 15px
+    +screen(desktop-up)
+      margin-top: 26px
+    +screen(phone-only)
+      font-size: 13px
+      padding: 8px 18px
+
+  &.is-notice
+    border-color: $noticeColor
+    color: $noticeColor
+    cursor: auto
+
+    &:hover
+      background-color: transparent

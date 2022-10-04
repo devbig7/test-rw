@@ -1,0 +1,278 @@
+footer.footer-container
+  background-color: $mainMidnightColor
+  padding: $space-08 $space-03
+  box-sizing: border-box
+  width: 100%
+  height: 100%
+  text-align: center
+
+  +screen(tablet-up)
+       padding: $space-08
+       text-align: left
+
+  +screen(small-desktop-up)
+       padding: $space-10
+
+  .main-container
+    display: grid
+    grid-template-areas: "products" "services" "company" "resources" "contacts"
+    grid-template-rows: auto
+    grid-template-columns: 1fr
+    justify-content: center
+
+    +screen(small-desktop-up)
+      grid-template-areas: "products services company resources contacts"
+      grid-template-columns: repeat(auto-fit, [col] minmax(240px, 1fr))
+      grid-template-rows: repeat(auto-fill, [row] auto  )
+      max-width: 1440px
+      margin: 0 auto
+    
+    +screen(big-desktop-up)
+      padding-left: $space-07
+
+    &__footer-column
+      color: $white
+
+      h6 
+        margin-bottom: 24px
+        color: $white
+
+      hr 
+        border: 1px solid $textFooterColor
+        margin: 24px auto 0
+        max-width: 200px
+
+        +screen(tablet-up)
+          margin: 24px 0
+      
+      .secondary-white
+        white-space: nowrap
+
+      .column-links
+        margin-bottom: $space-04
+
+        .location-container
+          margin-top: $space-02
+
+          p
+            color: $textFooterColor
+            font-size: 1rem
+
+          .minified-label
+            color: $white
+            margin-bottom: 4px
+
+        .secondary-button
+          display: block
+          margin-top: $space-03
+
+
+        li 
+          margin: $space-01 0
+
+          .single-link-item
+            color: $textFooterColor
+            font-size: 1rem
+            padding: 2px $space-01
+            margin-left: -$space-01
+            transition: 0.17s
+
+            &:hover
+              background-color: $linksHoverLight
+              color: $white 
+              border-radius: 8px
+
+          .link-to-video 
+            &::after
+              display: inline-block
+              margin-left: $space-01
+              content: ' '
+              background-image: url('shared/play-icon.svg')
+              width: 16px
+              height: 16px
+              line-height: 16px
+              vertical-align: middle
+
+          .link-to-channel
+             &::after
+              display: inline-block
+              margin-left: $space-01
+              content: ' '
+              background-image: url('shared/youtube-icon-minified.svg')
+              width: 16px
+              height: 16px
+              line-height: 16px
+              vertical-align: middle
+
+          .link-to-blog
+              &::after
+                display: inline-block
+                margin-left: $space-01
+                content: ' '
+                background-image: url('shared/blog-articles-minified.svg')
+                width: 16px
+                height: 16px
+                line-height: 16px
+                vertical-align: middle
+
+    .products-column
+      grid-area: products
+    .services-column
+      grid-area: services
+    .company-column
+      grid-area: company
+    .resources-column
+      grid-area: resources
+
+      +screen(small-desktop-up)
+        padding-left: $space-08
+
+    .contacts-column
+      grid-area: contacts
+      grid-column: 1
+      grid-row: row 2
+      margin-top: $space-04
+
+      +screen(small-desktop-up)
+          grid-column: col / span 4
+
+      .column-links
+        display: grid
+        grid-template-columns: 1fr
+
+        +screen(small-desktop-up)
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))
+          
+          .location-container
+            &:last-child
+              padding-left: $space-08
+  
+  .sub-footer
+    border-top: 1px solid $textFooterColor
+    margin: 48px auto 0
+    padding-top: 48px
+
+    +screen(big-desktop-up)
+      max-width: 1600px
+
+
+    .sub-footer-content-container
+      display: grid
+      grid-template: "logoContainer" "social" "subfooterLinks" / 1fr
+      gap: 24px
+      align-items: center
+      font-size: 1rem
+      justify-content: center
+
+      +screen(small-desktop-up)
+        gap: 64px
+        justify-content: flex-start
+        grid-template: "logoContainer social subfooterLinks" 
+        grid-template-columns: 1fr 1fr 0.87fr
+        max-width: 1440px
+        margin: 0 auto 
+
+      @media screen and (min-width: 1100px) and (max-width: 1280px)
+        grid-template-columns: 1fr 0.59fr 0.67fr
+        gap: 8px
+
+      +screen(big-desktop-up)
+        grid-template-columns: 1fr 1fr 1fr
+
+      &__logo-container
+        grid-area: logoContainer
+
+        .footer-logo
+          height: 24px
+
+          svg
+            height: 24px
+            width: auto
+            fill: $white
+
+            path
+              fill: $white
+
+        p.copyright-container
+          display: inline
+          margin-bottom: 0
+          margin-left: $space-01
+          color: $textFooterColor
+          font-size: 1rem
+
+      &__links-container
+        grid-area: subfooterLinks
+
+        +screen(small-desktop-up)
+          text-align: right
+
+        +screen(big-desktop-up)
+          text-align: right
+
+        a
+          color: $textFooterColor
+          padding: 2px $space-01
+          margin-left: -$space-01
+          transition: 0.17s
+
+          &:hover
+            background-color: $linksHoverLight
+            color: $white 
+            border-radius: 4px
+
+        a:not(:last-child)
+          margin-right: $space-02
+
+      &__socials
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(32px, 48px))
+        grid-area: social
+        justify-content: center
+
+        a
+          display: inline-block
+          width: 32px
+          height: 32px
+
+          &:hover
+            transition: all 0.27s
+            transform: scale(1.2)
+
+        +screen(tablet-up)
+          justify-content: flex-start
+
+        @media screen and (min-width: 1100px) and (max-width: 1280px)
+          grid-template-columns: repeat(auto-fit, minmax(24px, 32px))
+          justify-content: flex-start !important
+
+          a
+            background-size: contain
+            width: 24px
+            height: 24px
+
+        +screen(small-desktop-up)
+          justify-content: center
+
+.twitter-link
+  background: url('social-icons/twitter-icon.svg') no-repeat
+.facebook-link
+  background: url('social-icons/facebook-icon.svg') no-repeat
+.github-link
+  background: url('social-icons/github-icon.svg') no-repeat
+.vimeo-link
+  background: url('social-icons/vimeo-icon.svg') no-repeat
+.youtube-link
+  background: url('social-icons/youtube-icon.svg') no-repeat
+.flickr-link
+  background: url('social-icons/flickr-icon.svg') no-repeat
+.email-link
+  background: url('social-icons/email-icon.svg') 0px 5px no-repeat
+  margin-left: 10px
+.skype-link
+  background: url('social-icons/skype-icon.svg') no-repeat
+.instagram-link
+  background: url('social-icons/instagram-icon.svg') no-repeat
+.dribbble-link
+  background: url('social-icons/dribbble-icon.svg') no-repeat
+.linkedin-link
+  background: url('social-icons/linkedin-icon.svg') no-repeat

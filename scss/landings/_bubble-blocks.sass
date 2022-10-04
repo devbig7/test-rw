@@ -1,0 +1,33 @@
+.bubble-blocks
+  max-width: 940px
+  line-height: 1.3
+  display: flex
+  flex-flow: row wrap
+  font-size: 18px
+  +screen(desktop-up)
+    max-width: 1250px
+  > li
+    padding: 20px 30px
+    flex-basis: 30%
+    margin: 10px
+    align-items: center
+    text-align: center
+    border-radius: 20px
+    background-color: $backgroundInformativeDecorative
+    +screen(phone-only)
+      flex: 0 0 100%
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3)
+        background-image: linear-gradient(to top left, #54309a, #1d4fb8 80%)
+    +screen(tablet-up)
+      &:nth-child(1)
+        background-image: linear-gradient(to top left, #54309a, #1d4fb8 80%)
+      &:nth-child(2)
+        background-image: linear-gradient(to top left, #861c83, #333fab 80%)
+      &:nth-child(3)
+        background-image: linear-gradient(to top left, #af0e7b, #642993 80%)
+    +screen(desktop-up)
+      font-size: 22px
+      padding: 30px 45px
+      flex-basis: 31%

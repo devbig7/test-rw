@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="icon-gradients" width="0px" height="0px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Gradients set</title>
+  <desc>Gradients to be used for icons on React page</desc>
+  <defs>
+    <linearGradient id="linear" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8f00e5"></stop>
+      <stop offset="100%" stop-color="#00b7e8"></stop>
+    </linearGradient>
+    <linearGradient id="red-purple">
+      <stop offset="0%" stop-color="#ae4178" />
+      <stop offset="100%" stop-color="#2917a1" />
+    </linearGradient>
+    <linearGradient id="ror-primary" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#532C99" />
+      <stop offset="100%" stop-color="#144AC4" />
+    </linearGradient>
+    <linearGradient id="new-web-primary" x1="74.2823" y1="21.5624" x2="13.2861" y2="-10.8017" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DD4C52"/>
+      <stop offset="0.575852" stop-color="#921E8D"/>
+      <stop offset="1" stop-color="#521182"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,27 @@
+.info-table
+  width: 100%
+  font-size: 14px
+  thead
+    font-weight: bold
+  .spacer, .spacer td
+    background-color: $backgroundNeutralColor
+  tr
+    background-color: $backgroundNeutralColor
+  td
+    padding: .75rem
+    line-height: 1.2
+  tbody
+    td
+      vertical-align: top
+      &.broken-words
+        word-break: break-word
+      a
+        word-break: break-word
+      &:first-child
+        width: 10%
+  &-holder
+    max-width: 100%
+    overflow: auto
+  &.halfy
+    td
+      width: 50%

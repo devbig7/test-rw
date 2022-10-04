@@ -1,0 +1,36 @@
+.development-options
+  h3
+    text-transform: capitalize
+    font-size: 66px
+    +screen(phone-only)
+      font-size: 43px
+  .divider
+
+    top: 80px
+    box-shadow: none
+    background-image: linear-gradient(180deg, #1aa2c3 0%, #7cd37d 100%)
+    margin-left: -.5px
+    &::before
+      background-image: linear-gradient(180deg, #87db6d 0%, #2c96f1 100%)
+    &::after
+      background-color: $accentColor
+    +screen(desktop-up)
+      top: 125px
+    +screen(phone-only)
+      width: 40px
+      height: 40px
+      background-image: linear-gradient(#0cc7ce, #159bda)
+      top: auto
+      font-size: 17px
+      line-height: 37px
+      &::before
+        background-image: linear-gradient(#32c9d5, #18a4cd)
+        width: 80vw
+  .items-wrapper
+    position: relative
+    padding-bottom: 0px
+  .item
+    width: calc(50% - 20px)
+    +screen(phone-only)
+      width: auto
+

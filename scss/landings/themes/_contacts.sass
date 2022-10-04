@@ -1,0 +1,158 @@
+$rich-transition: cubic-bezier(0.19, 1, 0.22, 1)
+
+.contacts-fintech
+  background:
+    image: url('fintech/innovate-medium.jpg')
+    repeat: no-repeat
+    position: center
+    size: cover
+  +retina
+    background-image: url('fintech/innovate-medium@2x.jpg')
+  +screen(desktop-up)
+    background-image: url('fintech/innovate-big.jpg')
+    +retina
+      background-image: url('fintech/innovate-big@2x.jpg')
+  +screen(phone-only)
+    background-image: linear-gradient(41deg, #8b00e4 15%, #05b0e8 85%)
+
+.contacts-ai
+  background-color: #211f8a
+  background-image: linear-gradient(to top left, #c00e77, #1c0978, #3486e0)
+
+.contacts-ror
+  background:
+    repeat: no-repeat
+    position: center
+  +background-image-retina('ror/footer-pic-medium.jpg', 1475px 658px)
+  +screen(phone-only)
+    +background-image-webp('ror/footer-pic-small', '.jpg')
+    background-size: auto 100%
+  +screen(desktop-up)
+    +background-image-retina('ror/footer-pic-big.jpg', 2930px 984px)
+  +screen(huge-desktop-only)
+    background-size: cover
+
+.contacts-react
+  position: relative
+  background: linear-gradient(107.68deg, #1063DF 0%, #121475 48.9%, #730E85 100%)
+  &:before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 355px
+    height: 560px
+    background: url('react/footer-pic-big.svg') no-repeat 0 0
+    background-size: cover
+    +screen(phone-only)
+      width: 390px
+      height: 625px
+  .contacts
+    +screen(tablet-up)
+      min-height: 600px
+      padding:
+        top: 260px
+    +screen(phone-only)
+      min-height: 645px
+      padding:
+        top: 230px
+    h2
+      letter-spacing: normal
+      +screen(tablet-up)
+        font-size: 60px
+        max-width: none
+      +screen(phone-only)
+        font-size: 30px
+        line-height: 1
+    p
+      +screen(tablet-up)
+        font-size: 33px
+      +screen(phone-only)
+        font-size: 22px
+        line-height: 1.18
+    .cta
+      +screen(tablet-up)
+        padding:
+          top: 40px
+      +screen(phone-only)
+        padding:
+          top: 0
+
+.contacts-new-web
+  position: relative
+  +screen(tablet-up)
+    background: linear-gradient(236.9deg, #DD4C52 31.29%, #921E8D 51.51%, #521182 76.03%)
+  +screen(phone-only)
+    background: linear-gradient(292.73deg, #DD4C52 18.91%, #921E8D 43.16%, #521182 72.57%)
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-position-x: center
+    background-repeat: no-repeat
+    background-size: cover
+    +screen(tablet-up)
+      background-image: url('react/footer-new-web-big.svg')
+      background-position-y: 30px
+    +screen(phone-only)
+      background-image: url('react/footer-new-web-small.svg')
+      background-position-y: center
+  .contacts
+    +screen(tablet-up)
+      min-height: 1020px
+      padding:
+        top: 260px
+    +screen(phone-only)
+      min-height: 645px
+      padding:
+        top: 230px
+    h2
+      letter-spacing: normal
+      +screen(tablet-up)
+        font-size: 60px
+        max-width: none
+      +screen(phone-only)
+        font-size: 30px
+        line-height: 1
+    p
+      +screen(tablet-up)
+        font-size: 33px
+      +screen(phone-only)
+        font-size: 22px
+        line-height: 1.18
+    .cta
+      +screen(tablet-up)
+        padding:
+          top: 100px
+      +screen(phone-only)
+        padding:
+          top: 0
+
+.contacts-bridges
+  // background: #fff
+  background-size: cover
+  .contacts
+    min-height: 480px
+    height: 480px
+  .title
+    +screen(desktop-up)
+      margin-bottom: 60px
+      font-size: 70px
+      font-family: "Poppins SemiBold"
+      line-height: 1.05
+  .text
+    +screen(desktop-up)
+      font-family: $support-font-stack
+      font-size: 32px
+      line-height: 1.5
+  .cta
+    +screen(desktop-up)
+      padding-top: 20px
+  .caption
+    color: $textDefaultColor
+
+

@@ -1,0 +1,61 @@
+.blogposts-list
+  .item
+    display: flex
+    padding:
+      top: 10px
+      bottom: 10px
+    &:not(:last-child)
+      border-bottom: 1px solid #e0e0e0
+    &:first-child
+      padding-top: 0
+    +screen(desktop-up)
+      padding:
+        top: 15px
+        bottom: 15px
+
+  .date
+    margin:
+      right: 20px
+      left: 5px
+    width: 45px
+    text-align: center
+    .day
+      font:
+        size: 38px
+        family: $light-font-stack
+      line-height: 1.2
+      color: $textLightColor
+    .month
+      padding: 2px 5px 3px
+      border: 1px solid #bbc2c3
+      border-radius: 4px
+      font:
+        size: 11px
+        weight: bold
+      line-height: 1
+      text-transform: uppercase
+      color: $textLightColor
+
+  .info
+    flex: 1
+
+  .title
+    display: block
+    margin-top: 4px
+    font:
+      size: 20px
+      family: $support-font-stack
+    line-height: 1.4
+    +screen(desktop-up)
+      font-size: 24px
+    +screen(phone-only)
+      margin-top: 10px
+      font-size: 18px
+
+  .author
+    margin-top: 5px
+    font-size: 14px
+    +screen(desktop-up)
+      font-size: 16px
+    +screen(phone-only)
+      font-size: 13px

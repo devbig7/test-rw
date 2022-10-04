@@ -1,0 +1,51 @@
+.grouped-filter
+  $smallBreakpoint: 650px
+
+  .container
+    display: flex
+    @media (max-width: $smallBreakpoint)
+      flex-direction: column
+
+  .filter-group
+    flex: 1 1 auto
+    border: solid $borderLightColor
+    border-width: 0 1px 0 0
+    &:last-child
+      border: none
+    @media (max-width: $smallBreakpoint)
+      border-width: 0 0 1px 0
+      padding: 0 0 10px 0
+      margin-bottom: 20px
+
+  .label-text
+    font-family: $support-font-stack
+
+  input[type='checkbox']
+    display: none
+    + .label-text
+      position: relative
+      display: inline-block
+      padding-left: 25px
+      &::before
+        position: absolute
+        left: 0
+        top: 8px
+        width: 13px
+        height: 13px
+        border: 1px solid $accentColor
+        content: ""
+        +screen(desktop-up)
+          top: 10px
+    &:checked + .label-text::after
+      content: ""
+      position: absolute
+      top: 9px
+      left: 3px
+      height: 5px
+      width: 12px
+      border: 2px solid $accentColor
+      border-width: 0 0 2px 2px
+      box-shadow: inset 2px -2px 0 0 $white, -1px 2px 0 0 $white
+      transform: rotate(-45deg)
+      +screen(desktop-up)
+        top: 11px

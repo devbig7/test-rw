@@ -1,0 +1,77 @@
+/* Overall Settings */
+.enlarged-link-icon
+  display: inline-block
+  vertical-align: middle
+  line-height: 100%
+  margin-left: $space-01
+
+  svg
+    transition: 0.27s
+    vertical-align: middle
+    overflow: visible
+
+    circle
+      transform-origin: center
+      transition: 0.2s
+    
+    path
+      transform-origin: center
+      transition: 0.27s
+  
+  #play-circled
+    transform-origin: center
+    transition: 0.12s
+
+/* Animations Settings */
+
+.animated-icon
+
+  &:hover
+    /* Circled play icon hover animations */
+    #play-circled
+      transform-origin: center
+      transform: scale(1.17)
+      #play-triangle
+        transform: scale(1.17)
+        transform-origin: center
+
+    /* Case Studies icon hover animations */
+    #case-studies
+      #top-left
+        transform: translate(-1px, -1px)
+      #top-right
+        transform: translate(1px, -1px)
+      #bottom-left
+        transform: translate(-1px, 1px)
+      #bottom-right
+        transform: translate(1px, 1px)
+    
+    /* Settings Cog icon hover animations (Used on Products page) */
+    #settings-icon
+      #cog
+        transform: rotate(45deg) scale(1.17)
+    
+    /* Blog Articles icon hover animations */
+    #blog-articles
+      #top-row
+        transform: scaleX(0.45) translateX(-6px)
+      #middle-row
+        transform: scaleX(0.85) translateX(-1px)
+      #bottom-row
+        transform: scaleX(1.5) translateX(1.5px)
+      #bg
+        transform: scale(1.07)
+
+    /* Gradient Youtube Button icon hover animations */
+    #youtube-gradient
+      #box
+        transform: scale(1.1)
+        transform-origin: center
+      #play-icon
+        transform-origin: center
+        transform: scale(1.3)
+
+    
+
+
+    

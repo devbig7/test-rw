@@ -1,0 +1,155 @@
+.header
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 4
+  padding: $space-02 $space-04
+  background-color: rgba(255, 255, 255, 0)
+  transition: padding 0.2s ease-in-out
+  transform: translateZ(0)
+
+  +screen(phone-only)
+    position: absolute
+
+  +screen(small-phone-only)
+    padding: 12px 9px
+
+  +screen(low-narrow)
+    transition: none
+
+  .is-nav-shown &
+    +screen(low-narrow)
+      padding: $space-07 0 0 0 !important
+      margin-top: 3px !important
+      position: relative
+      overflow: hidden
+    .crosspage-content-container
+      max-width: 1090px
+      +screen(big-desktop-up)
+      max-width: 1355px
+      transition: none
+
+  body.index & 
+    margin-top: $space-06
+    .page-wrapper:not(.is-nav-shown)   
+      &.is-sticky
+        margin-top: 0px
+
+  &.is-scrolled
+    background-color: rgb(255, 255, 255)
+    box-shadow: 0 3px 5px -3px $shadowDark
+    &.squeezed-header 
+      padding: 10px 25px
+      transition: 0.4s ease-in-out
+      box-shadow: none
+
+  .logo
+    &-wrapper
+      float: left
+      overflow: hidden
+
+    &-sign, &-text
+      float: left
+      svg
+        display: block
+
+    &-sign
+      box-sizing: content-box
+      padding: 10px 15px 11px
+      width: 66px
+      height: 24px
+      fill: $accentColor
+      body[class*='fintech'] &
+        fill: url(#green-blue)
+      +context('.header', '.header.has-dark-bg:not(.is-scrolled)')
+        fill: $white
+        .index &
+          fill: $accentColor
+      +screen(low-narrow)
+        .is-nav-shown &
+          +context('.header', '.header.has-dark-bg')
+            fill: $accentColor
+
+    &-text
+      padding: 12px 15px
+      width: 130px
+      height: 45px
+      border-left: 1px $borderDefaultColor solid
+      fill: $textDefaultColor
+      +screen(low-narrow)
+        display: none
+      +context('.header', '.header.has-dark-bg:not(.is-scrolled)')
+        border-color: $backgroundDark
+        fill: $backgroundDark
+
+  .hire-button
+    float: right
+    margin:
+      top: 5px
+      right: 25px
+
+  .hamburger
+    float: right
+    margin:
+      top: 6px
+      right: 15px
+
+  &.branded:not(.is-scrolled)
+    .logo-sign
+      fill: $white
+    .logo-text
+      border-color: $backgroundDark
+      fill: $backgroundDark
+    .hire-button
+      border-color: $white
+      color: $white
+      &:hover
+        background-color: $white
+        color: $accentColor
+    .hamburger
+      border-color: $white
+    
+.secondary-crosspage
+  position: fixed
+  visibility: hidden
+  transform: translateY(10px)
+  width: 100%
+  left: 0
+  right: 0
+  top: 64px
+  box-shadow: 5px 5px 9px 0px #B5AFBA21
+  .crosspage-content-container
+    max-width: 1200px
+    padding: 0 0 0 10px
+    +screen(tablet-down)
+      padding: 0 0 0 80px
+    +screen(tablet-up)
+      padding: 0 0 0 128px
+    +screen(big-desktop-up)
+      padding: 0 0 0 130px
+
+    ul 
+      display: inline-block
+      li
+        display: inline-block
+        padding: 5px 8px
+        height: 100%
+        box-sizing: border-box
+        margin-right: 12px
+        a
+          font-size: 14px
+          line-height: 150%
+          color: $textDefaultColor
+          &:hover
+            color: $hoverDarkToLight
+      li.active
+        border-bottom: 3px solid $borderDefaultColor
+
+.is-scrolled
+  .secondary-crosspage
+    visibility: visible
+    transition: 0.4s ease-in-out
+    transform: translateY(0)
+    background-color: $backgroundDefaultColor
+    border-top: 1px solid $borderLightColor

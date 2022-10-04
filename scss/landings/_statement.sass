@@ -1,0 +1,164 @@
+.statement
+  display: flex
+  justify-content: center
+  +screen(phone-only)
+    flex-direction: column-reverse
+
+  .image
+    width: 35%
+    padding-right: 50px
+    +screen(desktop-up)
+      width: 25%
+    +screen(phone-only)
+      max-width: 300px
+      width: 100%
+      padding: 0
+    &_md
+      width: 40%
+      padding-right: 50px
+      +screen(phone-only)
+        width: 100%
+
+  .text-wrapper
+    max-width: 790px
+    +screen(phone-only)
+      text-align: center
+      max-width: none
+
+    h2
+      font-size: 47px
+      margin-bottom: 20px
+      +screen(phone-only)
+        font-size: 32px
+
+  &.ruby
+    align-items: flex-start
+    +screen(phone-only)
+      align-items: center
+
+  &.react
+    align-items: flex-start
+    +screen(phone-only)
+      margin: -20px 0
+      align-items: center
+      flex-direction: column
+
+    .image
+      +screen(desktop-up)
+        width: 36.3%
+        padding-right: 70px
+      +screen(phone-only)
+        max-width: 220px
+        margin-bottom: 10px
+
+    .text-wrapper
+      +screen(desktop-up)
+        max-width: none
+        padding-top: 50px
+      h2
+        line-height: 1.05
+        +screen(desktop-up)
+          font-size: 60px
+        +screen(phone-only)
+          margin-bottom: 10px
+          font-size: 30px
+
+    p
+      +screen(desktop-up)
+        font-size: 23px
+        line-height: 1.65
+      +screen(phone-only)
+        font-size: 14px
+        line-height: 1.57
+
+    .subtitle
+      font-family: $support-font-stack
+      +screen(desktop-up)
+        font-size: 33px
+        line-height: 1.45
+      +screen(phone-only)
+        margin-bottom: 10px
+        font-size: 17px
+        line-height: 1.47
+
+    .list
+      margin: 40px 0 0 25px
+      +screen(phone-only)
+        margin: 20px 0 0 10px
+      .item
+        position: relative
+        padding-left: 15px
+        margin-bottom: 30px
+        font-family: $support-font-stack
+        font-size: 23px
+        line-height: 1.65
+        text-align: left
+        +screen(phone-only)
+          margin-bottom: 10px
+          font-size: 14px
+        &:last-child
+          margin-bottom: 0
+        &:before
+          position: absolute
+          content: ''
+          top: 10px
+          left: -22px
+          width: 14px
+          height: 14px
+          border-radius: 50%
+          background-color: $accentColor
+          +screen(phone-only)
+            left: -7px
+            width: 8px
+            height: 8px
+
+    &_styled
+
+      .image
+        +screen(tablet-up)
+          width: 46%
+          padding-right: 65px
+        +screen(phone-only)
+          max-width: 100%
+          margin-left: 30px
+
+      .text-wrapper
+        padding-top: 70px
+        max-width: 590px
+        h2
+          margin: 0 0 20px
+          line-height: 1.03
+          +screen(desktop-up)
+            font-size: 60px
+        p
+          +screen(phone-only)
+            margin-bottom: 20px
+
+  &.react-native
+    display: block
+    .title
+      +screen(tablet-up)
+        margin: 0 0 55px
+    .subtitle
+      font-family: $support-font-stack
+      text-align: center
+      +screen(tablet-up)
+        font-size: 33px
+      +screen(phone-only)
+        font-size: 16px
+      &_fix-bottom-offset
+        +screen(tablet-up)
+          margin-bottom: 130px
+        +screen(phone-only)
+          margin-bottom: 45px
+      &_low-bottom-offset
+        +screen(tablet-up)
+          margin-bottom: 30px
+        +screen(phone-only)
+          margin-bottom: 20px
+
+  &.tools
+    align-items: center
+    .image
+      +screen(small-phone-only)
+        transform: translate(42px, 0)

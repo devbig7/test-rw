@@ -1,0 +1,12 @@
+<svg id="icon-gradients" width="0px" height="0px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <linearGradient id="bridges-logo" x1="-15%" y1="-15%" x2="95%" y2="95%">
+        <stop stop-color="#078E86"/>
+        <stop offset="0.236179" stop-color="#189E8E"/>
+        <stop offset="0.673936" stop-color="#97476B"/>
+        <stop offset="1" stop-color="#E35F35"/>
+      </linearGradient>
+
+      <linearGradient id="bridges" xlink:href="#bridges-logo" x1="0%" y1="0%" x2="100%" y2="100%" />
+    </defs>
+</svg>

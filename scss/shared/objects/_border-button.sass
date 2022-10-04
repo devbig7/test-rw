@@ -1,0 +1,23 @@
+.border-button
+  display: inline-block
+  padding: 18px 40px
+  border: 1.5px solid $accentColor
+  border-radius: 8px
+  background-color: transparent
+  font:
+    family: $secondary-font-stack
+    size: 16px
+  text:
+    align: center
+    decoration: none
+    transform: uppercase
+  color: $accentColor
+  outline: none
+  cursor: pointer
+  transition: all 0.3s ease
+  +screen(phone-only)
+    font-size: 13px
+    padding: 14px 32px
+  &:hover
+    background-color: $accentColor
+    color: $white

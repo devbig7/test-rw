@@ -1,0 +1,116 @@
+.open-source-list
+  min-height: 700px
+  padding-bottom: 55px
+  text-align: center
+
+  .item
+    position: relative
+    overflow: hidden
+    display: none // rule for Mixitup filtering
+    margin: 15px 21px 30px
+    padding:
+      right: 30px
+      bottom: 75px
+      left: 30px
+    width: 227px
+    height: 303px
+    border-top: 3px solid
+    text-align: left
+    vertical-align: top
+
+    $listItemsQuantity: 50
+    @for $i from 1 to $listItemsQuantity
+      &-animation-delay-#{$i}
+        transition-delay: #{$i * 0.1}s !important
+
+    .mask
+      position: absolute
+      top: -3px
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: -1
+      background-color: $backgroundNeutralColor
+      box-shadow: inset 0 0 0 0
+      transition: all 0.15s cubic-bezier(0.13, 0.47, 0.66, 0.82)
+
+      +screen(tablet-up)
+        +context('.item', '.item:hover')
+          background-color: $backgroundDefaultColor
+          box-shadow: inset 0 0 0 6px
+
+  .tech-icon
+    position: absolute
+    top: 15px
+    right: 20px
+    width: 34px
+    height: 34px
+    &.is
+      &-apple
+        background-image: url('open-source/tech/apple.svg')
+      &-c
+        background-image: url('open-source/tech/c.svg')
+      &-coffee
+        background-image: url('open-source/tech/coffee.svg')
+      &-css
+        background-image: url('open-source/tech/css.svg')
+      &-js
+        background-image: url('open-source/tech/js.svg')
+      &-php
+        background-image: url('open-source/tech/php.svg')
+      &-python
+        background-image: url('open-source/tech/python.svg')
+      &-ruby
+        background-image: url('open-source/tech/ruby.svg')
+      &-shell
+        background-image: url('open-source/tech/shell.svg')
+
+  .forked
+    position: absolute
+    top: 19px
+    right: 65px
+    left: 30px
+    font-size: 11px
+    line-height: 1.1
+    color: $textDefaultColor
+    .project
+      overflow: hidden
+      width: 125px
+      white-space: nowrap
+      text-overflow: ellipsis
+      font-weight: bold
+      color: $accentColor
+
+  .name
+    margin-top: 70px
+    font:
+      family: $secondary-font-stack
+      size: 16px
+    line-height: 1.2
+    text-transform: uppercase
+    color: $textDefaultColor
+    word-wrap: break-word
+
+  .description
+    margin-top: 10px
+    font-size: 16px
+    color: $textDefaultColor
+
+  .stars,
+  .forks
+    position: absolute
+    padding-left: 22px
+    bottom: 28px
+    font:
+      size: 14px
+      weight: bold
+    line-height: 18px
+    color: $textDefaultColor
+    background: no-repeat left center
+
+  .stars
+    left: 30px
+    background-image: url('open-source/star.svg')
+  .forks
+    left: 50%
+    background-image: url('open-source/fork.svg')

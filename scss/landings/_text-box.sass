@@ -1,0 +1,35 @@
+.text-box
+  &__wrap
+    +screen(tablet-up)
+      display: flex
+      justify-content: center
+    +screen(tablet-only)
+      margin: 0 -60px
+  &__col
+    +screen(desktop-up)
+      width: 530px
+      margin: 0 60px
+    +screen(tablet-up)
+      width: 50%
+    +screen(tablet-only)
+      margin: 0 50px
+  &__title
+    font-family: $display-font-stack
+    line-height: 1.15
+    +screen(tablet-up)
+      margin-bottom: 40px
+      // min-height: 118px
+      font-size: 52px
+      text-align: left
+    +screen(phone-only)
+      margin-bottom: 25px
+      font-size: 30px
+  &__text
+    +screen(tablet-up)
+      font-size: 23px
+      line-height: 1.65
+      text-align: left
+    +screen(phone-only)
+      font-size: 14px
+      line-height: 1.57
+    

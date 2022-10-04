@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="icon-gradients" width="0px" height="0px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Gradients set</title>
+    <desc>Gradients to be used for icons on Fintech page</desc>
+    <defs>
+      <linearGradient id="linear" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#8f00e5"></stop>
+        <stop offset="100%" stop-color="#00b7e8"></stop>
+      </linearGradient>
+      <linearGradient id="green-blue">
+        <stop offset="0%" stop-color="#5fbe72" />
+        <stop offset="100%" stop-color="#2ba3c5" />
+      </linearGradient>
+      <linearGradient id="fintech-expertise" x1="100%" x2="0%" gradientTransform="rotate(120)">
+        <stop offset="0%" stop-color="#1c6ff7" />
+        <stop offset="100%" stop-color="#00b5ae" />
+      </linearGradient>
+    </defs>
+</svg>

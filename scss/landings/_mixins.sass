@@ -1,0 +1,18 @@
+@mixin header($color, $colorCode)
+  .header
+    .logo-sign
+      fill: url($color)
+    .hamburger
+      border-color: $colorCode
+    .hire-button
+      border-color: $colorCode
+      color: $colorCode
+      &:hover
+        background-color: darken($colorCode, 10%)
+        border-color: darken($colorCode, 10%)
+
+@mixin card-icon($color)
+  .card-icon
+    svg
+      path, polygon
+        fill: url($color)

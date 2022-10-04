@@ -1,0 +1,97 @@
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+textarea
+  display: block
+  width: 100%
+  padding: 17px 30px 17px 20px
+  border: 1px solid $borderLightColor
+  font-size: 18px
+  line-height: 1.2
+  outline: none
+  transition: border-color .5s ease
+  appearance: none
+  background: transparent
+
+  +screen(phone-only)
+    padding: 11px 30px 11px 15px
+    font-size: 15px
+
+  &:focus
+    border-color: $newAccentColor
+
+  .has-error &
+    border-color: $warningColor
+
+textarea
+  resize: none
+
+input[type='checkbox'],
+input[type='radio']
+  display: none
+  + .label-text
+    display: inline-block
+    cursor: pointer
+    position: relative
+    font-family: $support-font-stack
+    padding-left: 27px
+    +screen(phone-only)
+      font-size: 14px
+      padding-right: 50px
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+    &::before
+      left: 0
+      border: 1px solid $newAccentColor
+    &:after
+      display: none
+  &:checked
+    + .label-text
+      cursor: default
+      &::after
+        display: block
+      &::before
+        background-color: $newAccentColor
+
+input[type='checkbox']
+  + .label-text
+    &::before
+      top: 7px
+      width: 13px
+      height: 13px
+      .is-inactive &
+        display: none
+      +screen(phone-only)
+        top: 4px
+    &::after
+      top: 10px
+      left: 2px
+      height: 5px
+      width: 9px
+      border: solid $white
+      border-width: 0 0 2px 2px
+      transform: rotate(-45deg) translateZ(0)
+      +screen(phone-only)
+        top: 8px
+
+input[type='radio']
+  + .label-text
+    +screen(phone-only)
+      padding:
+        top: 4px
+    &::before
+      top: 6px
+      width: 16px
+      height: 16px
+      border-radius: 50%
+    &::after
+      top: 12px
+      left: 6px
+      height: 4px
+      width: 4px
+      border-radius: 50%
+      background-color: $backgroundDefaultColor

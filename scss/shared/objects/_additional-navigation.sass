@@ -1,0 +1,220 @@
+.additional-navigation
+  $border: 1px solid $borderLightColor
+  $lightGray: #fbfbfb
+  $darkGray: #c0c0c0
+  $customTimingFunction: cubic-bezier(0, 0.77, 0.64, 1)
+  $siblingProjectsTransitionDuration: 0.3s
+
+  display: flex
+  border-top: 1px solid $borderDefaultColor
+  +screen(small-phone-only)
+    flex-direction: column
+  &.has-dark-layout
+    border-top: none
+
+  .item
+    display: flex
+    flex-direction: column
+    flex: 1
+    position: relative
+    padding: 100px 35px 75px
+    border-left: $border
+    text-align: center
+    &:first-child
+      border-left: 0
+    +screen(tablet-only)
+      +context('.additional-navigation', '.additional-navigation:not(.is-projects)')
+        padding-top: 70px
+    +screen(phone-only)
+      padding: 50px 15px 35px
+    +screen(small-phone-only)
+      border:
+        bottom: $border
+        left: 0
+    &.is-all-works
+      +screen(small-phone-only)
+        order: 3
+
+    &:hover
+      background-color: $lightGray
+    .icon
+      position: relative
+      overflow: hidden
+      width: 104px
+      height: 104px
+      margin: 0 auto
+      perspective: 200
+
+      .image
+        border-radius: 50%
+        +context('.item', '.item:hover')
+          opacity: 0
+          transition: opacity 0.05s linear 0.25s
+
+      .circle,
+      .arrow
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+      .circle
+        border-radius: 50%
+        &.is-outer
+          width: 100%
+          height: 100%
+          background-color: rgba($darkGray, 0)
+          transition: all $siblingProjectsTransitionDuration linear
+          +context('.item', '.item:hover')
+            background-color: rgba($darkGray, 1)
+        &.is-inner
+          width: 24px
+          height: 24px
+          background-color: rgba($lightGray, 0)
+          transition: $siblingProjectsTransitionDuration $customTimingFunction
+          transition-property: width, height
+          +context('.item', '.item:hover')
+            width: 98px
+            height: 98px
+            background-color: rgba($lightGray, 1)
+      .arrow
+        margin-left: 17px
+        width: 20px
+        height: 36px
+        background: url('case-studies/additional-navigation/arrow.svg')
+        opacity: 0
+        transition-duration: 0s
+        +context('.item', '.item:hover')
+          margin-left: -4px
+          opacity: 1
+          transition: all $siblingProjectsTransitionDuration $customTimingFunction
+        &.is-right
+          margin-left: -17px
+          transform: translate(-50%, -50%) scaleX(-1)
+          +context('.item', '.item:hover')
+            margin-left: 4px
+
+      .square
+        // 3D Flip example
+        // http://davidwalsh.name/css-flip
+        $transitionDelayCoef: 65ms
+
+        position: absolute
+        width: 42px
+        height: 42px
+        transition: 0.4s
+        transform-style: preserve-3d
+        +context('.item', '.item:hover')
+          transform: rotateX(180deg)
+
+        &:nth-child(1)
+          top: 7px
+          left: 7px
+          .project-icon
+            background-position: top left
+        &:nth-child(2)
+          top: 7px
+          left: 55px
+          transition-delay: $transitionDelayCoef
+          .project-icon
+            background-position: top right
+          .mask
+            transition-delay: $transitionDelayCoef
+        &:nth-child(3)
+          top: 55px
+          left: 7px
+          transition-delay: $transitionDelayCoef * 4
+          .project-icon
+            background-position: bottom left
+          .mask
+            transition-delay: $transitionDelayCoef * 4
+        &:nth-child(4)
+          top: 55px
+          left: 55px
+          transition-delay: $transitionDelayCoef * 3
+          .project-icon
+            background-position: bottom right
+          .mask
+            transition-delay: $transitionDelayCoef * 3
+
+      .project-icon
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        backface-visibility: hidden
+        transform-style: preserve-3d
+        &.is-front
+          z-index: 2
+          background: url('case-studies/additional-navigation/projects-list.jpg') no-repeat
+          transform: rotateX(0deg)
+        &.is-back
+          background-color: $lightGray
+          border: 3px solid $darkGray
+          transform: rotateX(180deg)
+
+      .mask
+        backface-visibility: hidden
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        opacity: 0
+        background-color: $darkGray
+        transition: opacity 0.2s
+        +context('.item', '.item:hover')
+          opacity: 1
+
+    .main-icon svg
+      +screen(tablet-down)
+        width: 180px
+        height: 180px
+      path
+        transition: all 0.5s
+        +context('.item', '.item:hover')
+          &.icon-border
+            fill: $accentColor
+          &.icon-bg
+            fill: $backgroundNeutralColor
+
+  .title
+    margin-top: 14px
+    font:
+      family: $additional-font-stack
+      size: 18px
+    color: $textDefaultColor
+    text-transform: uppercase
+    +screen(desktop-up)
+      size: 22px
+    +screen(phone-only)
+      font-size: 16px
+  h4
+    margin-bottom: 20px
+
+  .big-title
+    font:
+      family: $secondary-font-stack
+      size: 34px
+      weight: bold
+    line-height: 1
+    color: $textDefaultColor
+    text-transform: uppercase
+    +screen(desktop-up)
+      margin-top: 14px
+      font-size: 36px
+    +screen(phone-only)
+      font-size: 28px
+  .description
+    margin: 0px auto 30px
+    color: $textDefaultColor
+    font-size: 18px
+    max-width: 70%
+    +screen(desktop-up)
+      font-size: 20px
+    +screen(tablet-down)
+      font-size: 18px
+
+  .more-link
+    margin-top: auto

@@ -1,0 +1,74 @@
+.links-box
+  +screen(desktop-up)
+      margin-top: $space-06
+  &__wrap
+    display: grid
+    +screen(tablet-up)
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: 342px
+    +screen(desktop-up)
+      grid-template-rows: 500px
+  &__item
+    position: relative
+    display: flex
+    align-items: flex-end
+    overflow: hidden
+    +screen(phone-only)
+      padding: $space-04 $space-05
+      min-height: 190px
+    +screen(tablet-up)
+      padding: $space-04 $space-05
+    +screen(big-tablet-up)
+      padding: $space-07 $space-08
+    &:hover
+      .links-box__bg
+        transform: scale(1.07)
+    &_services
+      .links-box__bg
+        &::before
+          background: $gradientServices
+          opacity: .4
+    &_team
+      .links-box__bg
+        &::before
+          background: $gradientProducts
+  &__bg
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    transition: all 0.6s ease-in-out
+    &::before
+      position: absolute
+      content: ''
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+  &__content
+    position: relative
+    display: grid
+    max-width: 340px
+    align-self: start
+    align-self: flex-end
+    grid-template: auto 1fr / auto 1fr
+    grid-auto-flow: column
+
+    @media screen and (min-width: 768px)
+      min-height: 146px
+
+  &__title
+    margin-top: 0
+    color: $white
+  &__subtitle
+    line-height: 1.5
+    color: $white
+    +screen(phone-only)
+      display: none
+    +screen(tablet-up)
+      display: block

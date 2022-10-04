@@ -1,0 +1,75 @@
+.listing
+  position: relative
+  p.h4
+    font-size: 32px
+    margin-bottom: 1.5rem
+    +screen(desktop-up)
+      font-size: 43px
+    +screen(phone-only)
+      font-size: 26px
+      max-width: 355px
+      margin:
+        left: auto
+        right: auto
+
+  .inner-wrapper
+    display: flex
+    flex-direction: row-reverse
+    align-items: center
+    justify-content: space-between
+    +screen(phone-only)
+      flex-direction: column
+
+  .image-cover, ul
+    width: 45%
+
+  .image-cover
+    display: flex
+    justify-content: center
+    +screen(phone-only)
+      width: 150%
+      margin: 50px 0 20px
+
+  ul
+    font-size: 16px
+    > li
+      display: flex
+      flex-flow: row nowrap
+      align-items: center
+      line-height: 1.4
+      font-size: inherit
+      + li
+        margin-top: 35px
+      > svg
+        flex: 0 0 50px
+        width: 50px
+        height: 50px
+        margin-right: 30px
+        +screen(phone-only)
+          width: 65px
+          height: 65px
+          flex-basis: 65px
+          margin-right: 0
+        path
+          fill: url(#linear)
+          width: 100%
+      > .caption
+        flex: 1
+    +screen(desktop-up)
+      font-size: 26px
+      > li
+        > svg
+          flex: 0 0 65px
+          width: 65px
+          height: 65px
+        + li
+          margin-top: 45px
+    +screen(phone-only)
+      width: 100%
+      max-width: 355px
+      font-size: 20px
+      > li
+        flex-direction: column
+        text-align: center
+        .caption
+          margin-top: 1rem

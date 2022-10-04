@@ -1,0 +1,172 @@
+.hero-section
+    box-sizing: border-box
+    margin-bottom: $space-11
+    padding-top: $space-10
+
+    +screen(tablet-up)
+        padding: 0
+
+    &__container
+        display: grid
+        grid-template: "content" "image"
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+
+        +screen(tablet-up)
+            grid-template: "content image"
+            grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr))
+        
+        @media screen and ( min-width: 768px ) and (max-width: 1024px )
+            padding-top: $space-12
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr))
+
+        &_left
+            padding: $space-03
+            grid-area: content
+            align-self: center
+
+            .hero-section-heading
+                margin-bottom: $space-04
+                color: $mainMidnightColor
+                z-index: 1
+
+                strong
+                    background: $gradientCore
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+
+            .subheading
+                margin-bottom: 0 !important
+                max-width: 90%
+                color: $mainMidnightColor
+
+            .hero-picture-mobile
+                z-index: -1
+                position: relative
+
+                img
+                    width: auto
+                    height: 100%
+                    max-height: 400px
+                    object-fit: cover
+                    object-position: right
+                    margin-top: -$space-10
+                    
+
+                +screen(tablet-up)
+                    display: none
+
+                
+
+            @media screen and (min-width: 768px) and (max-width: 1024px)
+                max-width: 550px
+                margin-left: $space-06
+
+            +screen(small-desktop-up)
+                max-width: 700px
+                padding: $space-14 $space-03 0 $space-08
+                justify-self: end
+
+            .page-price 
+                background: $gradientCore
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                margin-top: $space-04
+                margin-bottom: $space-04
+                position: relative
+                max-width: 190px
+
+                +screen(tablet-up)
+                    max-width: 170px
+                    margin-bottom: $space-07
+
+                span
+                    position: absolute
+                    top: $space-01
+                    left: $space-25
+                    white-space: nowrap
+                    background: $textDarkColor
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                    vertical-align: middle
+                    line-height: 32px
+            
+            .hero-links-container 
+                margin-top: $space-02
+                display: flex
+                justify-content: flex-start
+                gap: $space-02
+                flex-wrap: wrap
+                align-items: center
+                max-width: 500px
+
+                +screen(tablet-up)
+                    flex-wrap: nowrap
+                    gap: $space-07
+
+                &__single-link
+                    color: $mainMidnightColor
+                    display: inline-block
+                    vertical-align: middle
+                    line-height: 24px 
+                    font-weight: bold
+                    max-width: 250px
+                    width: 100%
+                    white-space: nowrap
+
+                    img
+                        display: inline-block
+                        vertical-align: middle
+                        margin-right: $space-01
+                        transition: 0.27s
+                    
+                    p
+                        vertical-align: middle
+                        display: inline-block
+                        transition: 0.27s 
+                        margin-bottom: $space-01
+                    
+                    &:hover
+                        color: $textDarkColor
+
+                        img
+                            margin-right: $space-02
+
+                
+                
+                
+        &_right
+            grid-area: image
+            overflow: visible
+
+            picture
+                overflow: visible
+                img
+                    object-fit: cover
+                    object-position: left
+
+                    
+
+                    @media screen and (min-width: 768px) and (max-width: 1024px)
+                        object-fit: cover
+                        height: 100%
+
+                    +screen(big-desktop-up)
+                        object-fit: cover
+                        margin-right: -$space-06
+                        object-position: -$space-04
+                    
+                    +screen(tablet-up)
+                        height: 105%
+                        object-position: -40px -40px
+                    
+
+
+                    
+
+            @media screen and ( max-width:  767px) // never do this. use existing mixins. it's only for designer's sake
+                display: none
+            
+            @media screen and (min-width: 768px) and (max-width: 1024px) // never do this. use existing mixins. it's only for designer's sake
+                margin-top: -120px
+                position: relative
+                z-index: -1

@@ -1,0 +1,144 @@
+.items-grid,
+.cards-grid
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  margin-top: 1rem
+  +screen(phone-only)
+    flex-flow: column nowrap
+    width: 100%
+  &.justify-left
+    justify-content: flex-start
+  &_two-columns
+    .card
+      +screen(tablet-up)
+        max-width: none !important
+        width: 47% !important
+        flex-basis: 47% !important
+      +screen(tablet-only)
+        padding: 55px 42px 69px 52px !important
+      +screen(desktop-up)
+        padding: 73px 52px 86px 65px !important
+      body[class*='web'] &
+        +screen(tablet-only)
+          padding: 55px 42px 20px 52px !important
+        +screen(desktop-up)
+          padding: 73px 52px 26px 65px !important
+
+  .card
+    flex: 0 0 21%
+    min-height: 191px // ~ 21% of 980
+    background-color: $white
+    box-shadow: 0.643px 0.766px 0px 0px rgba(12, 34, 66, 0.09), 10.285px 12.257px 38px 0px rgba(12, 34, 66, 0.13)
+    border-radius: 20px
+    margin:
+      right: .5vw
+      bottom: 1vw
+      left: .5vw
+    display: flex
+    flex-flow: column nowrap
+    padding: 21px 26px
+    font-size: 14px
+    +screen(desktop-up)
+      flex-basis: 300px
+      min-height: 300px
+      font-size: 20px
+      padding: 36px 3rem
+    +screen(phone-only)
+      flex: 1 0 100%
+      min-height: 140px
+      width: 100%
+      font-size: 14px
+      margin:
+        right: auto
+        bottom: 25px
+        left: auto
+      padding: 1rem 26px
+      &:last-child
+        margin-bottom: 0
+    &.is-text
+      min-height: auto
+      margin-bottom: 25px
+      +screen(tablet-up)
+        flex-basis: 45%
+        margin-bottom: 40px
+      +screen(desktop-up)
+        flex-basis: 295px
+        margin-bottom: 50px
+      &.is-wide
+        flex-basis: 420px
+        min-height: auto
+        +screen(phone-only)
+          flex-basis: auto
+        .card-icon
+          flex: auto
+          margin-bottom: 10px
+      .card-category
+        text-align: left
+        text-transform: uppercase
+        font-size: 13px
+        padding-bottom: 8px
+        color: $backgroundInformativeDecorative
+      .card-icon
+        flex: 0 0 20%
+        min-height: 20% // fix for strange FF display issue when icon doesn't take 70% of height
+        text-align: left
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        +screen(phone-only)
+          flex-grow: 1
+        svg
+          width: 62px
+          height: 62px
+          +screen(desktop-up)
+            width: 70px
+            height: 70px
+            margin-left: -4px
+          +screen(phone-only)
+            margin-bottom: 8px
+      .card-title
+        flex: none
+        align-items: flex-start
+        text-align: left
+        margin-bottom: 0 
+        +screen(tablet-down)
+          font-size: 18px
+      .card-text
+        margin: 1rem 0
+        font-size: 1rem
+    &-icon
+      flex: 0 0 70%
+      min-height: 70% // fix for strange FF display issue when icon doesn't take 70% of height
+      text-align: center
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      +screen(phone-only)
+        flex-grow: 1
+      svg
+        width: 62px
+        height: 62px
+        +screen(desktop-up)
+          width: 100px
+          height: 100px
+    &-title
+      flex: 0 0 30%
+      font-family: $additional-font-stack
+      line-height: 1.2
+      text-align: center
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+
+.items-grid
+  .item
+    display: flex
+    flex-flow: column nowrap
+    width: 45%
+    &:first-child
+      padding-right: 30px
+    &:nth-child(2)
+      padding-left: 30px

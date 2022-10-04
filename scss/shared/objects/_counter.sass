@@ -1,0 +1,106 @@
+@keyframes hideAnimation
+  0%
+    opacity: 1
+    transform: translateY(0)
+  100%
+    opacity: 0
+    transform: translateY(30px)
+
+@keyframes showAnimation
+  0%
+    opacity: 0
+    transform: translateY(-20px)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+.counter-wrapper
+  position: relative
+  margin:
+    top: 16px
+    bottom: 22px
+  height: 110px
+  line-height: 1
+  text-align: center
+  color: $textDefaultColor
+  +screen(desktop-up)
+    margin:
+      top: 32px
+      bottom: 44px
+
+.counter
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+
+  .value
+    font:
+      size: 66px
+      weight: 300
+    opacity: 1
+    transform: translateY(0)
+    animation: showAnimation 0.4s cubic-bezier(0.07, 0.65, 0.42, 1) 0.5s both
+    +context('.counter', '.counter.is-animated')
+      animation: hideAnimation 0.3s cubic-bezier(0.6, 0.06, 0.71, 0.53) 0.1s both
+    +context('.counter', '.counter.has-initial-state')
+      animation: none
+    +screen(desktop-up)
+      font-size: 74px
+    +screen(phone-only)
+      animation-delay: -1s !important
+
+  .filtered-value
+    margin-top: 8px
+    font:
+      size: 53px
+      weight: 300
+    opacity: 0
+    transform: translateY(-20px)
+    animation: hideAnimation 0.3s cubic-bezier(0.6, 0.06, 0.71, 0.53) 0.1s both
+    +context('.counter', '.counter.is-animated')
+      animation: showAnimation 0.4s cubic-bezier(0.07, 0.65, 0.42, 1) 0.5s both
+    +context('.counter', '.counter.has-initial-state')
+      animation: none
+
+    +screen(desktop-up)
+      font-size: 58px
+
+    +screen(phone-only)
+      animation-delay: -1s !important
+
+  .divider
+    color: $textLightColor
+
+  .text-label
+    font:
+      family: $additional-font-stack
+      size: 13px
+    text-transform: uppercase
+    color: $textLightColor
+    +screen(desktop-up)
+      font-size: 14px
+
+  .text-label.is-short
+    margin-top: 4px
+    animation: showAnimation 0.4s cubic-bezier(0.24, 0.5, 0.59, 1) 0.3s both
+    +context('.counter', '.counter.is-animated')
+      animation: hideAnimation 0.3s cubic-bezier(0.66, 0.02, 0.87, 0.45) both
+    +context('.counter', '.counter.has-initial-state')
+      animation: none
+
+    +screen(phone-only)
+      animation-delay: -1s !important
+
+  .text-label.is-long
+    margin-top: 7px
+    opacity: 0
+    transform: translateY(-20px)
+    animation: hideAnimation 0.3s cubic-bezier(0.66, 0.02, 0.87, 0.45) both
+    +context('.counter', '.counter.is-animated')
+      animation: showAnimation 0.4s cubic-bezier(0.24, 0.5, 0.59, 1) 0.3s both
+    +context('.counter', '.counter.has-initial-state')
+      animation: none
+
+    +screen(phone-only)
+      animation-delay: -1s !important

@@ -1,0 +1,74 @@
+.filter
+  $smallBreakpoint: 650px
+  text-align: center
+  user-select: none
+
+  .filter-group
+    padding: 7px 0
+
+    +screen(big-phone-only)
+      +context('.filter', '.filter:not(.grouped-filter)')
+        display: flex
+        flex-wrap: wrap
+        max-width: 500px
+        margin: auto
+      +context('.filter', '.filter.open-source-filter')
+        padding-left: 8%
+
+    +screen(small-phone-only)
+      display: inline-block
+
+ 
+    
+  label
+    display: inline-block
+    margin: 0 4%
+    color: $accentColor
+    font:
+      size: 1.2rem
+      family: $support-font-stack
+    cursor: pointer
+
+    +screen(desktop-up)
+      margin: 0 5%
+      font-size: 1.3125rem
+
+    +screen(tablet-down)
+      flex: 1 1 40%
+      text-align: left
+
+    +screen(phone-only)
+      margin:
+        right: 0
+        left: 30px
+      display: block
+      padding: 0 0 10px
+
+    +screen(small-phone-only)
+      +context('.filter', '.filter:not(.grouped-filter)')
+        margin-left: 0
+
+  input[type='checkbox'],
+  input[type='radio']
+    &:checked
+      + .label-text::before
+        cursor: pointer
+        background-color: transparent
+
+  &.filter-radio
+    input[type='checkbox'],
+    input[type='radio']
+      + .label-text
+        padding-left: 0
+        border-bottom: 1px dashed $accentColor
+        &::before,
+        &::after
+          display: none
+      &:checked
+        + .label-text
+          cursor: pointer
+          border-bottom-color: transparent
+          color: $textDefaultColor
+
+  .label-text
+    cursor: pointer !important

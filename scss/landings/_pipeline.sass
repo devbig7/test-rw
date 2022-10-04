@@ -1,0 +1,122 @@
+.pipeline
+  display: flex
+  flex-flow: row wrap
+  margin: 40px 0
+  justify-content: center
+  +screen(phone-only)
+    margin-top: 10px
+  +screen(tablet-up)
+    border:
+      top: 3px solid $accentColor
+      bottom: 0px
+    border-image: linear-gradient(to right, #04aff4, #911bb0, #ff8d00, #a1ca48, #27c9b0) 1 0%
+    margin: 50px 0 0 0
+    justify-content: flex-start
+  &-item
+    display: flex
+    flex: 0 0 45%
+    flex-flow: column nowrap
+    +screen(tablet-up)
+      flex: 0 0 25%
+    +screen(phone-only)
+      flex: 0 0 100%
+      margin-bottom: 30px
+      align-items: center
+      &:last-child
+        margin-bottom: 0
+    .pipeline
+      &-number
+        display: flex
+        width: 35px
+        height: 35px
+        border-radius: 50%
+        background-color: $backgroundNeutralDecorative
+        color: $white
+        align-items: center
+        justify-content: center
+        margin-top: 0px
+        margin-bottom: 7px
+        font-size: 16px
+        +screen(tablet-up)
+          margin-bottom: 20px
+          margin-top: -19px
+        &.is-first
+          background-color: $accentColor
+        &.is-second
+          background-color: $backgroundInformativeDecorative
+        &.is-third
+          background-color: $backgroundWarningVividDecorative
+        &.is-fourth
+          background-color: $backgroundSuccessVividDecorative
+      &-header
+        display: flex
+        font-size: 24px
+        text-transform: none
+        +screen(desktop-up)
+          font-size: 36px
+      &-text
+        display: flex
+        text-align: left
+        margin-right: 25%
+        font-size: 16px
+        +screen(desktop-up)
+          font-size: 19px
+        +screen(phone-only)
+          text-align: center
+          margin-right: 0%
+  &-md
+    +screen(tablet-up)
+      margin: 130px -40px 0
+      border-top-width: 2px
+    +screen(phone-only)
+      position: relative
+      margin-top: 35px
+      &:before
+        content: ''
+        position: absolute
+        left: 15px
+        top: 0
+        bottom: 0
+        width: 1px
+        background: linear-gradient(0deg, #00C3FF 0%, #95CA52 20.66%, #FF8D02 46.95%, #C41A97 73.47%, #0AAFF4 99.18%)
+    .pipeline-item
+      .big-label
+        text-align: left !important
+      +screen(desktop-up)
+        padding-right: 40px
+      +screen(phone-only)
+        position: relative
+        align-items: flex-start
+        padding-left: 50px
+      .pipeline
+        &-number
+          +screen(desktop-up)
+            font:
+              size: 28px
+            margin:
+              top: -31px
+              bottom: 45px
+            width: 62px
+            height: 62px
+          +screen(phone-only)
+            position: absolute
+            left: 0
+            top: 0
+            width: 30px
+            height: 30px
+            font-size: 14px
+        &-header
+          +screen(desktop-up)
+            font-size: 38px
+            line-height: 1
+          +screen(phone-only)
+            margin-bottom: 10px
+            line-height: 1.13
+        &-text
+          +screen(desktop-up)
+            margin-right: 10%
+            font-size: 23px
+            line-height: 1.65
+          +screen(phone-only)
+            margin-bottom: 20px
+            text-align: left

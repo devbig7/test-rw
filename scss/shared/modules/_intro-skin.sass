@@ -1,0 +1,52 @@
+// skins params:
+//   header gradient from color, header gradient from color, intro text color, navigation link color
+
+$blog-skins: (skin-blue, #441cd1, #10a3d5, #10a3d5, #42cfff), (skin-light-blue, #3680d1, #9cd2f0, #83c0e7, #9cd2f0), (skin-blue-turquoise, #2a4cad, #2db2bd, #2db2bd, #3fd5e1), (skin-turquoise, #2c789b, #3bc3a7, #3bc3a7, #50e4c5), (skin-orange, #dc5e48, #ef9535, #dc854c, #ffb64e), (skin-yellow, #d46e35, #f0b639, #dfa44e, #ffce59), (skin-light-green, #519b79, #aad558, #9cc26e, #c1f286), (skin-green-blue, #018b47, #4b9dd1, #4b9dd1, #c1f286), (skin-green, #1f7c4d, #44c592, #44c592, #62e7a0), (skin-pale-green, #093637, #44a08d, #44a08d, #44a08d), (skin-purple, #13176d, #7326c6, #7326c6, #927cf1), (skin-dark-blue, #110a6e, #0f41c0, #0f41c0 #3b89ff), (skin-liliac, #4a17ab, #af41b7, #af41b7, #c059e2), (skin-pink, #54459b, #bc2974, #bc2974, #c447cf), (skin-ruby, #4b134f, #c94b4b, #c94b4b, #c94b4b), (skin-grey, #5c78a3, #afc2d1, #8fa2bb, #afc2d1), (skin-beige-blue, #636fa4, #e8cbc0, #dbc5be, #e8cbc0)
+
+@each $el-name, $header-from-color, $header-to-color, $intro-text-color, $header-link-color in $blog-skins
+  .#{$el-name}
+    .intro
+      +header-bg($header-from-color, $header-to-color)
+      h2
+        color: $white
+      .apply-button
+        color: $white
+        border-color: $white
+        background-color: transparent
+        &:hover
+          color: $header-from-color
+          border-color: $header-from-color
+          background-color: transparent
+          +context(".#{$el-name}", ".#{$el-name}.is-nav-shown")
+            +screen(low-narrow)
+              border-color: $accentColor
+              color: $white
+
+    .header:not(.is-scrolled)
+      color: $white
+      .logo-sign
+        fill: $white
+        transition: fill .3s ease
+        &:hover
+          fill: $header-link-color
+      .breadcrumbs
+        color: inherit
+      a
+        color: $white
+        &:hover
+          color: $header-link-color
+
+          +context(".#{$el-name}", ".#{$el-name}.is-nav-shown")
+            +screen(low-narrow)
+              color: $accentColor
+
+      .hamburger,
+      .hire-button
+        border-color: $white
+        &:hover
+          border-color: $header-link-color
+          background-color: transparent
+          +context(".#{$el-name}", ".#{$el-name}.is-nav-shown")
+            +screen(low-narrow)
+              border-color: $accentColor
+              color: $white

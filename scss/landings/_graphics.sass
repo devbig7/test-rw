@@ -1,0 +1,30 @@
+.graphics
+  h3
+    font-size: 26px
+    text-align: center
+    +screen(desktop-up)
+      font-size: 32px
+  h4
+    text-align: left
+    text-transform: none
+
+  .cards-grid .card.is-text
+    padding: 31px 36px
+    .card
+      &-icon
+        min-height: 40%
+
+      &-title
+        font-size: 32px
+      svg
+        border: 1px solid red
+        path, polygon, circle, rect
+          fill: url('#ror-primary')
+  body[class*='react'] &
+    +screen(tablet-up)
+      padding-bottom: 150px
+  &:last-child
+    body[class*='react'] &
+      +screen(tablet-up)
+        padding-bottom: 0
+

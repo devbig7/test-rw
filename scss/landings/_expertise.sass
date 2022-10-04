@@ -1,0 +1,88 @@
+.expertise
+  &_styled
+    .expertise
+      &__content
+        max-width: none
+      &__title
+        +screen(tablet-up)
+          text-align: center
+  &__inner
+    +screen(tablet-up)
+      display: flex
+  &__image
+    +screen(tablet-only)
+      margin-right: 70px
+    +screen(desktop-up)
+      margin-right: 130px
+    +screen(phone-only)
+      margin-bottom: 30px
+  &__content
+    +screen(tablet-only)
+      max-width: 600px
+    +screen(desktop-up)
+      max-width: 720px
+  &__title
+    font-family: 'Poppins SemiBold'
+    line-height: 1.05
+    font-size: 47px
+    +screen(desktop-up)
+      font-size: 60px
+    +screen(tablet-up)
+      margin: 0 0 35px
+      max-width: none
+    +screen(phone-only)
+      margin: 0 0 20px
+      font-size: 30px
+      text-align: center
+  &__text
+    margin-bottom: 30px
+    +screen(tablet-up)
+      font-size: 23px
+      line-height: 1.65
+    +screen(phone-only)
+      font-size: 14px
+      line-height: 1.57
+      text-align: center
+  &__row
+    +screen(tablet-up)
+      display: flex
+      justify-content: space-between
+  &__subtitle
+    font-family: $display-font-stack
+    +screen(tablet-up)
+      margin-bottom: 30px
+      font-size: 44px
+    +screen(phone-only)
+      margin-bottom: 25px
+      font-size: 33px
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    +screen(tablet-up)
+      margin: 0 -15px 70px
+    +screen(phone-only)
+      margin: 0 -10px 30px
+  &__item
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    min-height: 105px
+    +screen(phone-only)
+      margin: 0 10px 20px
+      width: 25%
+    +screen(tablet-only)
+      width: 110px
+    +screen(tablet-up)
+      margin: 0 15px 40px
+    +screen(desktop-up)
+      width: 135px
+    &-icon
+      display: flex
+      align-items: center
+      height: 100%
+    &-title
+      margin-top: 20px
+      +screen(tablet-up)
+        font-size: 19px
+      +screen(phone-only)
+        font-size: 14px

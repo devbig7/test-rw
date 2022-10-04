@@ -1,0 +1,12 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="play-circled">
+<circle id="background" cx="12.1956" cy="12.6956" r="10.1956" fill="url(#paint0_linear_1144_1807)"/>
+<path id="play-triangle" d="M16 12.7803L9.45227 16.5607L9.45227 9L16 12.7803Z" fill="#F3F6FC"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1144_1807" x1="-1.21341" y1="-5.78394" x2="29.7549" y2="-1.27351" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF6C40"/>
+<stop offset="1" stop-color="#FFB800"/>
+</linearGradient>
+</defs>
+</svg>

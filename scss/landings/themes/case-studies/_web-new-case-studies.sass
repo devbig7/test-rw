@@ -1,0 +1,212 @@
+.case-studies
+  &.web-new
+    .case-studies-blocks
+      h2
+        max-width: 1048px
+        line-height: 1.05
+        +screen(desktop-up)
+          font-size: 60px
+        +screen(phone-only)
+          margin-bottom: 10px
+          font-size: 30px
+      .subtitle
+        font-family: $support-font-stack
+        +screen(desktop-up)
+          margin-bottom: 63px
+          font-size: 33px
+          line-height: 1.45
+        +screen(tablet-only)
+          margin-bottom: 100px
+        +screen(phone-only)
+          font-size: 17px
+          line-height: 1.47
+      p
+        +screen(desktop-up)
+          max-width: 1150px
+          font-size: 23px
+          line-height: 1.65
+        +screen(phone-only)
+          font-size: 14px
+          line-height: 1.6
+      .block
+        .block-title
+          +screen(desktop-up)
+            margin-bottom: 35px
+            font-size: 52px
+            line-height: 1.15
+          +screen(phone-only)
+            margin-bottom: 20px
+            font-size: 30px
+            line-height: 1.13
+        .block-text
+          p
+            +screen(desktop-up)
+              margin-bottom: 35px
+              font-size: 21px
+              line-height: 1.55
+            +screen(phone-only)
+              max-width: 100%
+              margin-bottom: 10px
+              text-align: inherit
+              margin-right: auto
+      a.more-link
+        +screen(desktop-up)
+          font-size: 24px
+      &:nth-child(1)
+        h2
+          +screen(desktop-up)
+            margin: 0 auto 70px
+          +screen(phone-only)
+            margin-bottom: 30px
+        .text
+          +screen(desktop-down)
+            margin-bottom: 100px
+        .block
+          position: relative
+          .block-layer
+            position: absolute
+            width: 912px
+            height: 803px
+            top: -135px
+            left: -330px
+            background-image: url('react/bg-knowa.svg')
+          .block-image
+            position: absolute
+            width: 673px
+            height: 610px
+            top: 20px
+            left: -100px
+            background-image: url('react/knowa-medium.png')
+            +retina
+              background-image: url('react/knowa-medium@2x.png')
+          .block-text
+            margin-left: 60%
+          +screen(desktop-up)
+            padding: 225px 0 173px
+            .block-layer
+              width: 1236px
+              height: 985px
+              top: -51px
+              left: -416px
+              background-image: url('react/bg-knowa.svg')
+            .block-image
+              width: 940px
+              height: 830px
+              top: 190px
+              left: -90px
+              background-image: url('react/knowa-big.png')
+              +retina
+                background-image: url('react/knowa-big@2x.png')
+            .block-text
+              width: 473px
+          +screen(phone-only)
+            padding: 401px 0px 0px
+            .block-layer
+              display: none
+            .block-image
+              width: 500px
+              height: 440px
+              top: 20px
+              right: initial
+              left: 50%
+              transform: translateX(-62%)
+              +background-image-webp('react/knowa-small', '.jpg')
+            .block-text
+              margin:
+                top: 120px
+                left: 0
+                right: 0
+                bottom: 40px
+              text-align: center
+              width: auto
+      &:nth-child(2)
+        +screen(tablet-up)
+          margin-top: 100px
+        +screen(phone-only)
+          margin-top: 80px
+        h2
+          +screen(desktop-up)
+            margin: 0 auto 50px
+          +screen(phone-only)
+            margin-bottom: 20px
+          .block-layer
+            position: absolute
+            width: 682px
+            height: 683px
+            top: 60px
+            right: -300px
+            background-image: url('react/bg-office.svg')
+          .block-image
+            position: absolute
+            width: 623px
+            height: 556px
+            top: 150px
+            right: -100px
+            background-image: url('react/office-medium.png')
+            +retina
+              background-image: url('react/office-medium@2x.png')
+          .block-text
+            margin-right: 55%
+        .block
+          position: relative
+          padding: 157px 0px 0px
+          .block-layer
+            position: absolute
+            width: 752px
+            height: 763px
+            top: 0
+            right: -230px
+            background-image: url('react/bg-office.svg')
+          .block-image
+            position: absolute
+            width: 623px
+            height: 596px
+            top: 150px
+            right: -100px
+            background-image: url('react/office-medium.png')
+            +retina
+              background-image: url('react/office-medium@2x.png')
+          .block-text
+            margin-right: 55%
+          +screen(desktop-up)
+            padding: 205px 0 0
+            .block-layer
+              width: 1240px
+              height: 1040px
+              top: -35px
+              right: -390px
+              left: initial
+              background-image: url('react/bg-office.svg')
+            .block-image
+              width: 800px
+              height: 872px
+              top: 218px
+              right: -57px
+              background-image: url('react/office-big.png')
+              +retina
+                background-image: url('react/office-big@2x.png')
+            .block-title
+              line-height: 1.08
+            .block-text
+              width: 475px
+          +screen(phone-only)
+            padding: 446px 0px 0px
+            .block-layer
+              display: none
+            .block-image
+              width: 545px
+              height: 520px
+              top: -47px
+              right: initial
+              left: 50%
+              transform: translateX(-43%)
+              +background-image-webp('react/office-small', '.jpg')
+            .block-text
+              margin:
+                left: 0
+                right: 0
+              text-align: center
+              width: auto
+              p
+                text-align: inherit
+                margin-right: auto

@@ -1,0 +1,183 @@
+.hero
+  &.ai
+    padding-bottom: 0px
+    +screen(tablet-down)
+      height: 700px
+    +screen(small-phone-only)
+      height: 900px
+    .layers
+      right: -560px
+      width: 991px
+      height: 100%
+      background:
+        image: url('ai/ai-intro-medium.jpg')
+        size: 100% auto
+        repeat: no-repeat
+      +retina
+        background-image: url('ai/ai-intro-medium@2x.jpg')
+      +screen(desktop-up)
+        right: -600px
+        width: 1262px
+        height: 876px
+        background:
+          image: url('ai/ai-intro-big.jpg')
+          size: 100% auto
+        +retina
+          background-image: url('ai/ai-intro-big@2x.jpg')
+      +screen(phone-only)
+        top: auto
+        bottom: -15px
+        left: 50%
+        right: auto
+        transform: translateX(-50%)
+        margin: 20px auto 0
+        width: 877px
+        height: 505px
+        background:
+          image: url('ai/ai-intro-small.jpg')
+          size: 100% auto
+        +retina
+          background-image: url('ai/ai-intro-small@2x.jpg')
+
+  &.ror
+    @media (max-width: 768px)
+      padding-bottom: 30px
+    .layers
+      right: -560px
+      width: 991px
+      height: 688px
+      background:
+        image: url('ror/ror-intro-medium.jpg')
+        size: 991px 688px
+        repeat: no-repeat
+      +retina
+        background-image: url('ror/ror-intro-medium@2x.jpg')
+      +screen(desktop-up)
+        right: -600px
+        width: 1262px
+        height: 876px
+        background:
+          image: url('ror/ror-intro-big.jpg')
+          size: 1262px 876px
+        +retina
+          background-image: url('ror/ror-intro-big@2x.jpg')
+      +screen(phone-only)
+        top: 0px
+        left: 0px
+        margin: 20px auto 0px
+        position: relative
+        width: 670px
+        height: 535px
+        background-size: 100% auto
+        +background-image-webp('ror/ror-intro-small', '.jpg')
+      @media (max-width: 768px)
+        width: 100%
+        height: 380px
+        max-width: 485px
+      @media (max-width: 500px)
+        height: 310px
+
+
+  &.react
+    +screen(desktop-up)
+      padding:
+        top: 220px
+        bottom: 45px
+    +screen(phone-only)
+      padding:
+        top: 80px
+        bottom: 25px
+
+    h1
+      +screen(phone-only)
+        text-align: left
+      +screen(tablet-up)
+        max-width: 650px
+    p
+      +screen(phone-only)
+        width: 100%
+        max-width: 100%
+
+    .desktop-left
+      +screen(desktop-up)
+        font-size: 27px
+        line-height: 1.5
+      +screen(phone-only)
+        font-size: 15px
+        line-height: 1.6
+        text-align: left
+
+    .thin
+      +screen(desktop-up)
+        font-size: 21px
+        line-height: 1.57
+      +screen(phone-only)
+        font-size: 14px
+        line-height: 1.57
+        text-align: left
+
+    .layers
+      top: 80px
+      right: -315px
+      width: 778px
+      height: 712px
+      background:
+          // image: url('react/react-intro.svg')
+          size: 778px 712px
+          repeat: no-repeat
+      +screen(desktop-up)
+        top: 85px
+        right: -310px
+        width: 928px
+        height: 896px
+        background:
+          size: 978px 896px
+      +screen(phone-only)
+        top: 0
+        left: -17px
+        margin: -10px auto 10px
+        position: relative
+        width: 440px
+        height: 403px
+        background-size: 100% auto
+
+  &.fintech
+    h1
+      width: 475px
+    p
+      width: 45%
+    +screen(phone-only)
+      h1, p
+        width: 100%
+      padding:
+        bottom: 400px
+    .layers
+      left: 36%
+      width: 894px
+      height: 595px
+      background:
+        image: url('fintech/intro-medium.jpg')
+        size: 894px 595px
+        repeat: no-repeat
+      +retina
+        background-image: url('fintech/intro-medium@2x.jpg')
+      +screen(desktop-up)
+        left: 28%
+        width: 1694px
+        height: 1000px
+        background:
+          image: url('fintech/intro-big.jpg')
+          size: auto
+      +screen(phone-only)
+        top: initial
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 0
+        margin: 20px auto 0
+        width: 877px
+        height: 541px
+        background:
+          image: url('fintech/intro-small.jpg')
+          size: 100% auto
+        +retina
+          background-image: url('fintech/intro-small@2x.jpg')

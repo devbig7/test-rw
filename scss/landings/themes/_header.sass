@@ -1,0 +1,72 @@
+.header
+  .hire-button
+    display: block
+    margin-top: 0px
+    color: $mainMidnightColor
+    border: 1px solid $mainMidnightColor
+    background: none
+
+    &:hover
+      background: $mainMidnightColor
+      color: $white
+
+body[class*='ai-machine']
+  @include header(#ai-primary, #574acb)
+  @include card-icon(#ai-primary)
+
+  .header
+    .hire-button:hover
+      color: $white
+
+body[class*='react']
+  @include header(#ror-primary, #4235C0)
+  @include card-icon(#ror-primary)
+
+  .header
+    .hire-button
+      border-color: #4235C0
+      color: #4235C0
+      &:hover
+        background-color: #4235C0
+        color: $white
+
+body[class*='web']
+  @include header(#new-web-primary, #8f219d)
+  @include card-icon(#new-web-primary)
+
+  .header
+    .hire-button
+      border-color: #8f219d
+      color: #8f219d
+      &:hover
+        background-color: #8f219d
+        color: $white
+
+body[class*='ruby-on-rails']
+  @include header(#ror-primary, #332496)
+  @include card-icon(#ror-primary)
+
+  .header
+    .hire-button
+      background-color: #332496
+      color: $white
+      &:hover
+        background-color: $white
+        color: #332496
+
+body[class*='fintech']
+  @include card-icon(#green-blue)
+
+body[class*='bridges']
+  background-color: #f9f8f9
+  @include header(#bridges-logo, #343639)
+  @include card-icon(#bridges-logo)
+
+  .header
+    .hire-button:hover
+      color: $white
+
+body[class*='services'], body[class*='products'], body[class*='contact']
+  .header .hamburger
+    border-color: #343639
+    margin-top: 2px 

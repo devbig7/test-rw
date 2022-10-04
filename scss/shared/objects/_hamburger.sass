@@ -1,0 +1,52 @@
+.hamburger
+  width: 25px
+  padding-top: 4px
+  padding-bottom: 6px
+  border-color: $white
+  cursor: pointer
+
+  .has-dark-bg:not(.is-scrolled) &
+    border-color: $white
+    .index &
+      border-color: $white
+
+      +screen(small-tablet-down)
+        border-color: $backgroundDark
+
+      &:hover
+        border-color: $white
+        +screen(low-narrow)
+          border-color: $backgroundDark
+
+  +screen(low-narrow)
+    .is-nav-shown .has-dark-bg &
+      border-color: $backgroundDark
+
+  .cheese,
+  .salad,
+  .meet
+    float: right
+    margin-top: 6px
+    width: 100%
+    border:
+      top: 3px solid
+      color: inherit
+    transform-origin: right center
+    transition: $navigationMenuTransition
+
+  .cheese
+    transform-origin: right top
+    .is-nav-shown &
+      width: 27px
+      transform: rotate(-45deg)
+      border-color: $backgroundDark
+
+  .salad
+    .is-nav-shown &
+      opacity: 0
+  .meet
+    transform-origin: right bottom
+    .is-nav-shown &
+      width: 27px
+      transform: rotate(45deg)
+      border-color: $backgroundDark

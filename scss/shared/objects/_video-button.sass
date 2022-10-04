@@ -1,0 +1,25 @@
+.video-button
+  $transitionParams: all 0.4s
+  display: inline
+  width: 87px
+  height: 87px
+  margin: 0 auto
+  transform: scale(0.8)
+  border-radius: 50%
+  cursor: pointer
+  fill: #676361
+  width: 80%
+
+  .triangle
+    transition: $transitionParams
+    +context('.video-button', '.video-button:hover')
+      opacity: 0
+  .circle
+    transition: $transitionParams
+    opacity: 0
+    +context('.video-button', '.video-button:hover')
+      opacity: 1
+  svg
+    &:hover
+      transition: all 0.27s
+      transform: scale(1.2)

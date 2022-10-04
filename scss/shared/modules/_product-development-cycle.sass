@@ -1,0 +1,337 @@
+
+.product-development-cycle-section
+    margin-top: $space-10
+
+    &__container
+        padding: $space-03
+
+        +screen(tablet-down)
+            padding: $space-08
+        
+        +screen(small-phone-only)
+            padding: 0 $space-03
+
+        h2
+            max-width: 640px
+            margin: 0 auto
+            text-align: center
+        
+        .development-cycles
+            display: grid
+            grid-template-columns: repeat(auto-fit, minmax(20px, 1fr))
+            align-items: end
+            justify-content: flex-start
+            padding-top: $space-08
+            position: relative
+            max-width: 1280px
+            margin: 0 auto
+
+            +screen(tablet-up)
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr))
+
+            +screen(small-desktop-up)
+                margin-bottom: $space-06
+
+            &__single-item
+                text-align: center
+                position: relative
+                transition: 0.3s ease-in-out
+                cursor: pointer
+
+                &:last-child
+                    .development-cycles__single-item_heading
+                        .cycle-number
+                            &::after
+                                background: none !important
+
+                &_heading
+                    transition: 0.27s
+                    margin: 0 auto
+                    margin-bottom: $space-01
+                    max-width: 140px 
+                    z-index: 3
+                    position: relative
+
+                    +screen(small-desktop-up)
+                        min-height: 88px
+
+                    .cycle-number
+                        width: 100%
+                        display: inline-block
+                        position: relative
+                        color: $textDarkColor
+                        margin-bottom: $space-02
+
+                    .cycle-name
+                        width: 100%
+                        display: none
+                        color: $textDarkColor
+
+                        +screen(small-desktop-up)
+                            display: inline-block
+
+                img
+                    transition: 0.27s
+                    margin-top: $space-04
+                    width: 100% 
+                    z-index: 2
+                    position: relative
+                    display: none
+
+                    +screen(small-desktop-up)
+                        display: block
+                
+                &:hover
+
+                    img 
+                        
+                        filter: brightness(1.1) saturate(1.1)
+
+                    +screen(tablet-up)
+                        &::after
+                            position: absolute
+                            content: ' '
+                            width: 100%
+                            height: 120%
+                            display: block
+                            background: $transparentLinearOverlay
+                            top: -14%
+                            left: 0
+                            z-index: -1
+            
+            .prev
+                .development-cycles__single-item_heading
+                    .cycle-number
+                        color: $mainMidnightColor
+
+                        &::before
+                            transition: 0.27s
+                            content: ' '
+                            top: -4px
+                            left: 0
+                            right: 0
+                            margin: 0 auto
+                            position: absolute
+                            display: block
+                            width: 34px
+                            height: 34px
+                            background: url("services/product-development-cycle/number-border.svg")
+                            background-repeat: no-repeat
+                        
+                        +screen(big-tablet-up)
+                            &::after
+                                content: ' '
+                                top: -4px
+                                left: 75%
+                                margin: 0 auto
+                                position: absolute
+                                display: block
+                                width: 100%
+                                height: 16px
+                                background: url("services/product-development-cycle/prev-cycle-arrow.svg")
+                                background-repeat: no-repeat
+                                background-size: contain
+            
+            .active
+
+                img 
+                    transition: 0.27s
+                    filter: brightness(1.2) saturate(1.1)
+
+                +screen(tablet-up)
+                    &::after
+                        transition: 0.27s
+                        position: absolute
+                        content: ' '
+                        width: 100%
+                        height: 120%
+                        display: block
+                        background: $transparentLinearOverlay
+                        top: -14%
+                        left: 0
+                        z-index: -1
+
+                .development-cycles__single-item_heading
+                    .cycle-number
+                        transition: 0.27s
+                        color: $mainMidnightColor
+
+                        &::before
+                            transition: 0.27s
+                            content: ' '
+                            top: -4px
+                            left: 0
+                            right: 0
+                            margin: 0 auto
+                            position: absolute
+                            display: block
+                            width: 34px
+                            height: 34px
+                            background: url("services/product-development-cycle/number-border-active.svg")
+                            background-repeat: no-repeat
+                            background-size: contain
+
+                        +screen(big-tablet-up)
+                            &::after
+                                transition: 0.27s
+                                content: ' '
+                                top: -4px
+                                left: 75%
+                                margin: 0 auto
+                                position: absolute
+                                display: block
+                                width: 100%
+                                height: 16px
+                                background: url("services/product-development-cycle/next-cycle-arrow.svg")
+                                background-repeat: no-repeat
+                                background-size: contain
+
+                    
+                    .cycle-name
+                        color: $mainMidnightColor
+
+                
+
+        .development-cycles-teams
+            max-width: 1280px
+            margin: 0 auto
+            margin-bottom: $space-12
+            display: grid
+            grid-template-columns: 1fr
+            grid-template-rows: 0.1fr 1fr 1fr
+            gap: $space-02 $space-06
+            grid-template-areas: "name name" "teams teams" "description description"
+
+            +screen(tablet-up)
+                grid-template-rows: 0.5fr 1fr 1fr
+
+            +screen(small-desktop-up)
+                grid-template-columns: 1fr 1fr
+                grid-template-rows: 0.5fr 0.5fr
+                grid-template-areas: "name name" "teams description"
+
+            h3
+                margin-bottom: 0
+                transition: 0.57s
+                margin-top: -$space-02
+                grid-area: name
+                display: none
+
+                +screen(tablet-up)
+                    margin-bottom: $space-03
+            
+            h3.active
+                margin-top: 0
+                transition: 0.27s
+                display: block
+            
+            &__teams-list
+                grid-area: teams
+
+                ul
+                    display: grid
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+                    gap: $space-01 $space-03
+
+                    li 
+                        transition: 0.27s
+                        line-height: 48px
+                        font-weight: bold
+                        color: $mainMidnightColor
+                    
+                        span
+                            width: 100%
+                            height: 2px
+                            background-color: $additionalGreyBackground
+                            display: block
+                            content: ' '
+                            position: relative
+                            transition: width 0.27s
+
+                            &::before
+                                transition: width 0.27s
+                                width: 100%
+                                height: 2px
+                                display: block
+                                top: 0
+                                left: 0
+                                content: ' '
+                                position: absolute
+                                background-color: $teamBlue
+                        
+                        .hundred-percents
+                            &::before
+                                width: 100%
+                        .eighty-percents
+                            &::before
+                                width: 80%
+                        .sixty-percents
+                            &::before
+                                width: 60%
+                        .fourty-percents
+                            &::before
+                                width: 40%
+                        .twenty-percents
+                            &::before
+                                width: 20%
+                        .null-percents
+                            color: $textDarkColor !important
+                            
+                            &::before
+                                width: 0%
+                    
+                    .not-used-team
+                        color: $textDarkColor
+
+
+                    #pdm
+                        span
+                            &::before
+                                background-color: $teamBlue
+                    
+                    #dev
+                        span
+                            &::before
+                                background-color: $teamGreen
+                    
+                    #design
+                        span
+                            &::before
+                                background-color: $teamYellow
+                    
+                    #qa
+                        span
+                            &::before
+                                background-color: $teamShadedBlue
+                    
+                    #da
+                        span
+                            &::before
+                                background-color: $teamPurple
+                    
+                    #marketing
+                        span
+                            &::before
+                                background-color: $teamRed
+
+                    #support
+                        span
+                            &::before
+                                background-color: $teamGray
+                    
+                    
+                        
+            
+            &__description
+                grid-area: description
+
+            
+            .description-content
+                transition: 0.57s
+                margin-top: -$space-02
+                display: none
+
+            .visible
+                margin-top: 0
+                transition: 0.27s
+                display: block
